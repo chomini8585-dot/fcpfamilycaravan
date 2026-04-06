@@ -1071,6 +1071,322 @@ body {
   .process-note { font-size: 13px; padding: 14px 16px; }
 }
 
+/* ── ESTIMATE CALCULATOR ── */
+.estimate-section {
+  padding: 120px 24px;
+  background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+  border-top: 1px solid var(--border);
+}
+.estimate-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.estimate-card {
+  background: var(--white);
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 48px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+.estimate-header {
+  background: linear-gradient(135deg, var(--charcoal), #3a3a3a);
+  padding: 32px 36px;
+  text-align: center;
+  position: relative;
+}
+.estimate-header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(184,149,106,0.15), transparent 70%);
+}
+.estimate-header h3 {
+  position: relative;
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.estimate-header h3 span {
+  color: var(--gold-light);
+}
+.estimate-header p {
+  position: relative;
+  color: rgba(255,255,255,0.5);
+  font-size: 13px;
+  margin-top: 6px;
+}
+.estimate-body {
+  padding: 32px 36px;
+}
+.est-group {
+  margin-bottom: 24px;
+}
+.est-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.est-label-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+/* 트림 선택 버튼 그리드 */
+.est-trim-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.est-trim-btn {
+  padding: 14px 12px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  background: var(--white);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.25s;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.est-trim-btn:hover {
+  border-color: var(--gold-light);
+  background: var(--cream);
+}
+.est-trim-btn.active {
+  border-color: var(--gold);
+  background: rgba(184,149,106,0.08);
+  box-shadow: 0 0 0 1px var(--gold);
+}
+.est-trim-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 2px;
+}
+.est-trim-price {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+/* 패키지 선택 */
+.est-pkg-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.est-pkg-btn {
+  padding: 16px 12px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  background: var(--white);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.25s;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.est-pkg-btn:hover {
+  border-color: var(--gold-light);
+  background: var(--cream);
+}
+.est-pkg-btn.active {
+  border-color: var(--gold);
+  background: rgba(184,149,106,0.08);
+  box-shadow: 0 0 0 1px var(--gold);
+}
+.est-pkg-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+.est-pkg-price {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--charcoal);
+}
+/* 옵션 체크리스트 */
+.est-opts {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.est-opt-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.2s;
+  border-radius: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.est-opt-row:last-child { border-bottom: none; }
+.est-opt-row:hover { background: var(--cream); }
+.est-opt-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.est-opt-check {
+  width: 20px; height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s;
+  font-size: 12px;
+  color: transparent;
+}
+.est-opt-row.checked .est-opt-check {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--white);
+}
+.est-opt-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+}
+.est-opt-price {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--charcoal);
+  white-space: nowrap;
+}
+/* 하이브리드 토글 */
+.est-hybrid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--cream);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.est-hybrid:hover { background: var(--cream-dark); }
+.est-hybrid-left {
+  display: flex; align-items: center; gap: 10px;
+}
+.est-hybrid-toggle {
+  width: 44px; height: 24px;
+  border-radius: 12px;
+  background: #ccc;
+  position: relative;
+  transition: background 0.3s;
+  flex-shrink: 0;
+}
+.est-hybrid-toggle::after {
+  content: '';
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--white);
+  transition: transform 0.3s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.est-hybrid.active .est-hybrid-toggle {
+  background: var(--gold);
+}
+.est-hybrid.active .est-hybrid-toggle::after {
+  transform: translateX(20px);
+}
+/* 결과 영역 */
+.est-result {
+  margin-top: 28px;
+  background: linear-gradient(135deg, var(--charcoal), #2a2a2a);
+  border-radius: 16px;
+  padding: 28px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.est-result::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(184,149,106,0.12), transparent 70%);
+}
+.est-result-label {
+  position: relative;
+  font-size: 13px;
+  color: var(--gold-light);
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.est-result-total {
+  position: relative;
+  font-size: clamp(32px, 6vw, 48px);
+  font-weight: 900;
+  color: #FFD700;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+.est-result-total small {
+  font-size: 0.5em;
+  font-weight: 600;
+  color: rgba(255,255,255,0.6);
+}
+.est-result-breakdown {
+  position: relative;
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 16px;
+}
+.est-result-item {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 400;
+}
+.est-result-item strong {
+  color: rgba(255,255,255,0.8);
+  font-weight: 600;
+}
+.est-result-cta {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+  background: var(--gold);
+  color: var(--white);
+  text-decoration: none;
+  padding: 14px 36px;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: background 0.3s, transform 0.2s;
+}
+.est-result-cta:hover {
+  background: var(--gold-dark);
+  transform: translateY(-2px);
+}
+@media (max-width: 600px) {
+  .estimate-section { padding: 60px 10px; }
+  .estimate-body { padding: 24px 16px; }
+  .estimate-header { padding: 24px 20px; }
+  .estimate-header h3 { font-size: 20px; }
+  .est-trim-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+  .est-trim-btn { padding: 12px 8px; }
+  .est-trim-name { font-size: 13px; }
+  .est-pkg-btn { padding: 14px 10px; }
+  .est-result { padding: 24px 16px; }
+}
+
 /* ── CTA / CONTACT ── */
 .contact-section {
   padding: 0 24px 0;
@@ -1229,6 +1545,7 @@ body {
     <div class="nav-links" id="navLinks">
       <a href="#packages">패키지 소개</a>
       <a href="#features">특장점</a>
+      <a href="#estimate">견적 계산</a>
       <a href="#contact">상담 문의</a>
       <a href="tel:18778262" class="nav-cta">전화 상담</a>
     </div>
@@ -1791,7 +2108,6 @@ body {
             <div class="price-opt-row"><span>드라이브 와이즈</span><span>750,000원</span></div>
             <div class="price-opt-row"><span>모니터링 팩</span><span>1,200,000원</span></div>
             <div class="price-opt-row"><span>HUD + 빌트인 캠 2</span><span>1,200,000원</span></div>
-            <div class="price-opt-row"><span>듀얼 선루프</span><span>800,000원</span></div>
           </div>
         </div>
 
@@ -1814,7 +2130,6 @@ body {
             <div class="price-opt-row"><span>모니터링 팩</span><span>1,200,000원</span></div>
             <div class="price-opt-row"><span>HUD + 빌트인 캠 2</span><span>1,200,000원</span></div>
             <div class="price-opt-row"><span>BOSE 사운드</span><span>900,000원</span></div>
-            <div class="price-opt-row"><span>듀얼 선루프</span><span>800,000원</span></div>
           </div>
         </div>
 
@@ -1836,7 +2151,6 @@ body {
             <div class="price-opt-row"><span>모니터링 팩</span><span>1,200,000원</span></div>
             <div class="price-opt-row"><span>HUD + 빌트인 캠 2</span><span>1,200,000원</span></div>
             <div class="price-opt-row"><span>BOSE 사운드</span><span>900,000원</span></div>
-            <div class="price-opt-row"><span>듀얼 선루프</span><span>800,000원</span></div>
             <div class="price-opt-row"><span>X-Line 전용 사이드 스텝<br>/ LED 테일게이트 램프</span><span>570,000원</span></div>
           </div>
         </div>
@@ -1845,6 +2159,98 @@ body {
     </div>
 
     <p class="price-note">※ 하이브리드 선택 시 455만원이 추가됩니다. &nbsp;|&nbsp; 상기 가격은 변동될 수 있으며, 자세한 사항은 전화 상담을 통해 확인해 주세요.</p>
+  </div>
+</div>
+
+
+<!-- ESTIMATE CALCULATOR -->
+<div class="estimate-section reveal" id="estimate">
+  <div class="estimate-inner">
+    <div class="section-label" style="text-align:center;">Estimate</div>
+    <div class="section-title" style="text-align:center; margin: 0 auto 8px;">나만의 견적 계산기</div>
+    <p class="section-desc" style="text-align:center; margin: 0 auto 48px;">카니발 트림 + 원차 옵션 + 특장 패키지를 선택하면<br>예상 총 견적을 바로 확인할 수 있습니다.</p>
+
+    <div class="estimate-card">
+      <div class="estimate-header">
+        <h3>🧮 <span>FCP</span> 견적 계산기</h3>
+        <p>원차 + 옵션 + 특장 패키지 총 합산 견적</p>
+      </div>
+      <div class="estimate-body" id="estimateBody">
+
+        <!-- STEP 1: 트림 선택 -->
+        <div class="est-group">
+          <div class="est-label"><span class="est-label-num">1</span> 카니발 트림 선택</div>
+          <div class="est-trim-grid" id="estTrimGrid">
+            <div class="est-trim-btn active" data-trim="prestige">
+              <div class="est-trim-name">프레스티지</div>
+              <div class="est-trim-price">36,360,000원</div>
+            </div>
+            <div class="est-trim-btn" data-trim="noblesse">
+              <div class="est-trim-name">노블레스</div>
+              <div class="est-trim-price">40,710,000원</div>
+            </div>
+            <div class="est-trim-btn" data-trim="signature">
+              <div class="est-trim-name">시그니처</div>
+              <div class="est-trim-price">44,260,000원</div>
+            </div>
+            <div class="est-trim-btn" data-trim="xline">
+              <div class="est-trim-name">X-Line</div>
+              <div class="est-trim-price">45,020,000원</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2: 특장 패키지 -->
+        <div class="est-group">
+          <div class="est-label"><span class="est-label-num">2</span> 특장 패키지 선택</div>
+          <div class="est-pkg-grid" id="estPkgGrid">
+            <div class="est-pkg-btn active" data-pkg="1100">
+              <div class="est-pkg-name">Standard</div>
+              <div class="est-pkg-price">1,100만원</div>
+            </div>
+            <div class="est-pkg-btn" data-pkg="1500">
+              <div class="est-pkg-name">Premium</div>
+              <div class="est-pkg-price">1,500만원</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3: 원차 옵션 -->
+        <div class="est-group">
+          <div class="est-label"><span class="est-label-num">3</span> 원차 옵션 선택 <span style="font-weight:400;color:var(--text-muted);font-size:12px;">(중복 선택 가능)</span></div>
+          <div class="est-opts" id="estOpts">
+            <!-- JS로 트림별 옵션 동적 생성 -->
+          </div>
+        </div>
+
+        <!-- STEP 4: 하이브리드 -->
+        <div class="est-group">
+          <div class="est-label"><span class="est-label-num">4</span> 하이브리드 여부</div>
+          <div class="est-hybrid" id="estHybrid">
+            <div class="est-hybrid-left">
+              <span style="font-size:13px;font-weight:600;color:var(--text);">하이브리드 추가</span>
+              <span style="font-size:12px;color:var(--text-muted);">(+4,550,000원)</span>
+            </div>
+            <div class="est-hybrid-toggle"></div>
+          </div>
+        </div>
+
+        <!-- 결과 -->
+        <div class="est-result" id="estResult">
+          <div class="est-result-label">예상 총 견적</div>
+          <div class="est-result-total" id="estTotal">47,510,000<small>원 (부가세 포함)</small></div>
+          <div class="est-result-breakdown" id="estBreakdown">
+            <span class="est-result-item">원차 <strong>36,360,000</strong></span>
+            <span class="est-result-item">옵션 <strong>0</strong></span>
+            <span class="est-result-item">패키지 <strong>11,000,000</strong></span>
+            <span class="est-result-item">탁송비 <strong>150,000</strong></span>
+            <br><span class="est-result-item" style="margin-top:8px;color:rgba(255,255,255,0.7);font-size:11px;">※ 탁송비 15만원 포함 &nbsp;|&nbsp; 구조변경비 별도</span>
+          </div>
+          <a href="tel:18778262" class="est-result-cta">📞 이 견적으로 상담하기</a>
+        </div>
+
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1994,6 +2400,161 @@ function initPriceAccordion() {
   window.addEventListener('resize', checkWidth);
 }
 initPriceAccordion();
+</script>
+
+<script>
+// ── 견적 계산기 ──
+(function() {
+  const TRIMS = {
+    prestige: {
+      name: '프레스티지', base: 36360000,
+      options: [
+        { name: '스노우 화이트 펄', price: 80000 },
+        { name: '컨비니언스', price: 1100000 },
+        { name: '스타일', price: 1000000 },
+        { name: '12.3인치 클러스터', price: 600000 },
+        { name: '드라이브 와이즈', price: 1200000 },
+        { name: '모니터링 팩', price: 900000 },
+      ]
+    },
+    noblesse: {
+      name: '노블레스', base: 40710000,
+      options: [
+        { name: '스노우 화이트 펄', price: 80000 },
+        { name: '스타일', price: 1000000 },
+        { name: '컴포트', price: 1400000 },
+        { name: '스마트커넥트', price: 750000 },
+        { name: '드라이브 와이즈', price: 750000 },
+        { name: '모니터링 팩', price: 1200000 },
+        { name: 'HUD + 빌트인 캠 2', price: 1200000 },
+      ]
+    },
+    signature: {
+      name: '시그니처', base: 44260000,
+      options: [
+        { name: '스노우 화이트 펄', price: 80000 },
+        { name: '스타일', price: 700000 },
+        { name: '컴포트', price: 1400000 },
+        { name: '스마트커넥트', price: 750000 },
+        { name: '드라이브 와이즈', price: 750000 },
+        { name: '모니터링 팩', price: 1200000 },
+        { name: 'HUD + 빌트인 캠 2', price: 1200000 },
+        { name: 'BOSE 사운드', price: 900000 },
+      ]
+    },
+    xline: {
+      name: 'X-Line', base: 45020000,
+      options: [
+        { name: '스노우 화이트 펄', price: 80000 },
+        { name: '컴포트', price: 1400000 },
+        { name: '스마트커넥트', price: 750000 },
+        { name: '드라이브 와이즈', price: 750000 },
+        { name: '모니터링 팩', price: 1200000 },
+        { name: 'HUD + 빌트인 캠 2', price: 1200000 },
+        { name: 'BOSE 사운드', price: 900000 },
+        { name: 'X-Line 전용 사이드 스텝 / LED 테일게이트 램프', price: 570000 },
+      ]
+    }
+  };
+  const PKGS = { 1100: 11000000, 1500: 15000000 };
+  const HYBRID = 4550000;
+
+  let selectedTrim = 'prestige';
+  let selectedPkg = '1100';
+  let selectedOpts = new Set();
+  let hybridOn = false;
+
+  const trimGrid = document.getElementById('estTrimGrid');
+  const pkgGrid = document.getElementById('estPkgGrid');
+  const optsEl = document.getElementById('estOpts');
+  const hybridEl = document.getElementById('estHybrid');
+  const totalEl = document.getElementById('estTotal');
+  const breakdownEl = document.getElementById('estBreakdown');
+
+  function fmt(n) { return n.toLocaleString('ko-KR'); }
+
+  function renderOpts() {
+    selectedOpts.clear();
+    const trim = TRIMS[selectedTrim];
+    optsEl.innerHTML = trim.options.map((opt, i) =>
+      '<div class="est-opt-row" data-idx="' + i + '">' +
+        '<div class="est-opt-left">' +
+          '<div class="est-opt-check">✓</div>' +
+          '<span class="est-opt-name">' + opt.name + '</span>' +
+        '</div>' +
+        '<span class="est-opt-price">' + fmt(opt.price) + '원</span>' +
+      '</div>'
+    ).join('');
+
+    optsEl.querySelectorAll('.est-opt-row').forEach(row => {
+      row.addEventListener('click', () => {
+        const idx = parseInt(row.dataset.idx);
+        if (selectedOpts.has(idx)) {
+          selectedOpts.delete(idx);
+          row.classList.remove('checked');
+        } else {
+          selectedOpts.add(idx);
+          row.classList.add('checked');
+        }
+        calc();
+      });
+    });
+    calc();
+  }
+
+  const TAKSONG = 150000;
+
+  function calc() {
+    const trim = TRIMS[selectedTrim];
+    const basePrice = trim.base;
+    let optTotal = 0;
+    selectedOpts.forEach(idx => {
+      if (trim.options[idx]) optTotal += trim.options[idx].price;
+    });
+    const pkgPrice = PKGS[selectedPkg];
+    const hybridPrice = hybridOn ? HYBRID : 0;
+    const total = basePrice + optTotal + pkgPrice + hybridPrice + TAKSONG;
+
+    totalEl.innerHTML = fmt(total) + '<small>원 (부가세 포함)</small>';
+    breakdownEl.innerHTML =
+      '<span class="est-result-item">원차 <strong>' + fmt(basePrice) + '</strong></span>' +
+      '<span class="est-result-item">옵션 <strong>' + fmt(optTotal) + '</strong></span>' +
+      '<span class="est-result-item">패키지 <strong>' + fmt(pkgPrice) + '</strong></span>' +
+      (hybridOn ? '<span class="est-result-item">하이브리드 <strong>+' + fmt(hybridPrice) + '</strong></span>' : '') +
+      '<span class="est-result-item">탁송비 <strong>' + fmt(TAKSONG) + '</strong></span>' +
+      '<br><span class="est-result-item" style="margin-top:8px;color:rgba(255,255,255,0.7);font-size:11px;">※ 탁송비 15만원 포함 &nbsp;|&nbsp; 구조변경비 별도</span>';
+  }
+
+  // 트림 선택
+  trimGrid.querySelectorAll('.est-trim-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      trimGrid.querySelectorAll('.est-trim-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedTrim = btn.dataset.trim;
+      renderOpts();
+    });
+  });
+
+  // 패키지 선택
+  pkgGrid.querySelectorAll('.est-pkg-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      pkgGrid.querySelectorAll('.est-pkg-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedPkg = btn.dataset.pkg;
+      calc();
+    });
+  });
+
+  // 하이브리드 토글
+  hybridEl.addEventListener('click', () => {
+    hybridOn = !hybridOn;
+    hybridEl.classList.toggle('active', hybridOn);
+    calc();
+  });
+
+  // 초기화
+  renderOpts();
+})();
 </script>
 
 
