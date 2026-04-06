@@ -531,8 +531,44 @@ body {
   line-height: 1.6;
 }
 @media (max-width: 960px) {
-  .price-table-grid { min-width: 860px; }
   .price-section { padding: 80px 16px; }
+
+  /* ── 모바일 가격표: 세로 카드로 전환 ── */
+  .price-table-scroll { overflow-x: visible; }
+  .price-table-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0 !important;
+  }
+  .price-col { border-radius: 14px; }
+  .price-col-header { padding: 22px 20px; }
+  .price-grade { font-size: 14px; }
+  .price-value { font-size: 20px; }
+  .price-opt-row { padding: 10px 16px; margin: 0 8px; }
+  .price-opt-row span:first-child { font-size: 13px; }
+  .price-opt-row span:last-child { font-size: 13px; }
+  .price-opt-header { margin: 0 8px 4px; padding: 8px 16px; }
+
+  /* 모바일에서 접힘 지원 */
+  .price-col-body { display: none; }
+  .price-col.price-col-open .price-col-body { display: block; }
+  .price-col-header { cursor: pointer; position: relative; }
+  .price-col-header::after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid rgba(255,255,255,0.5);
+    border-bottom: 2px solid rgba(255,255,255,0.5);
+    transition: transform 0.3s;
+  }
+  .price-col.price-col-open .price-col-header::after {
+    transform: translateY(-30%) rotate(-135deg);
+  }
 }
 
 
@@ -685,8 +721,51 @@ body {
 @media (max-width: 700px) {
   .comp-summary { grid-template-columns: 1fr; }
   .comparison-section { padding: 80px 16px; }
-  .comp-table th { font-size: 14px; padding: 18px 14px; }
-  .comp-table td { font-size: 13px; padding: 14px; }
+
+  /* ── 모바일 비교표: 카드형 전환 ── */
+  .comp-table-wrap { overflow-x: visible; }
+  .comp-table { min-width: 0; display: block; border: none; box-shadow: none; border-radius: 0; }
+  .comp-table thead { display: none; }
+  .comp-table tbody { display: flex; flex-direction: column; gap: 12px; }
+  .comp-table tr { display: flex; flex-direction: column; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+  .comp-table tr.comp-highlight { background: rgba(184,149,106,0.04); }
+  .comp-table td.comp-feature {
+    display: block;
+    background: linear-gradient(135deg, var(--charcoal), #3a3a3a);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 14px 18px;
+    text-align: center;
+    border-bottom: none;
+  }
+  .comp-table td.comp-std,
+  .comp-table td.comp-prm {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    font-size: 14px;
+  }
+  .comp-table td.comp-std::before {
+    content: '1,100만원';
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    min-width: 80px;
+    flex-shrink: 0;
+  }
+  .comp-table td.comp-prm::before {
+    content: '1,500만원';
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gold-dark);
+    min-width: 80px;
+    flex-shrink: 0;
+  }
+  .comp-table td:last-child { border-bottom: none; }
 }
 
 /* ── YOUTUBE ── */
@@ -1602,6 +1681,38 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
+
+// Price table accordion (mobile)
+function initPriceAccordion() {
+  const cols = document.querySelectorAll('.price-col');
+  function isMobile() { return window.innerWidth <= 960; }
+
+  cols.forEach((col, idx) => {
+    const header = col.querySelector('.price-col-header');
+    header.addEventListener('click', () => {
+      if (!isMobile()) return;
+      const isOpen = col.classList.contains('price-col-open');
+      // close all
+      cols.forEach(c => c.classList.remove('price-col-open'));
+      // open clicked if it was closed
+      if (!isOpen) col.classList.add('price-col-open');
+    });
+  });
+
+  // On mobile, open first by default
+  function checkWidth() {
+    if (isMobile()) {
+      if (!document.querySelector('.price-col.price-col-open')) {
+        cols[0]?.classList.add('price-col-open');
+      }
+    } else {
+      cols.forEach(c => c.classList.remove('price-col-open'));
+    }
+  }
+  checkWidth();
+  window.addEventListener('resize', checkWidth);
+}
+initPriceAccordion();
 </script>
 
 
