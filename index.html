@@ -55,7 +55,8 @@ body {
   color: var(--charcoal);
   letter-spacing: -0.5px;
 }
-.nav-logo span { color: var(--gold); }
+.nav-logo span:first-child { color: var(--gold); }
+.nav-logo-sub { font-size: 18px; color: var(--charcoal); font-family: 'Noto Sans KR', sans-serif; }
 .nav-links { display: flex; gap: 32px; align-items: center; }
 .nav-links a {
   text-decoration: none; color: var(--text-light);
@@ -201,6 +202,7 @@ body {
 /* Promo top line */
 .hero-promo-row {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 12px;
@@ -236,7 +238,7 @@ body {
   border-radius: 100px;
   border: 1px solid var(--gold);
   color: var(--gold-dark);
-  font-size: clamp(13px, 2vw, 18px);
+  font-size: clamp(18px, 3vw, 28px);
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -1578,7 +1580,7 @@ body {
 <!-- NAV -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <div class="nav-logo"><span>FCP Limousine</span> 패밀리카라반 용인직영점</div>
+    <div class="nav-logo"><span>FCP Limousine</span> <span class="nav-logo-sub">패밀리카라반 용인직영점</span></div>
     <div class="nav-links" id="navLinks">
       <a href="#packages">패키지 소개</a>
       <a href="#features">특장점</a>
@@ -1608,8 +1610,8 @@ body {
   <canvas id="sakura-canvas"></canvas>
   <div class="hero-content">
     <div class="hero-promo-row">
+      <div class="hero-badge-inline">FCP Limousine Carnival</div>
       <div class="hero-promo-top">🎉 경축! 예약 폭주로 잠시 중단되었던<br>인기 특장 패키지 프로모션 재개!</div>
-      <div class="hero-badge-inline">Carnival Special Vehicle</div>
     </div>
     <h1>
       FCP Limousine Family Caravan
