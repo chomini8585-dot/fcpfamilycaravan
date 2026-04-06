@@ -407,10 +407,14 @@ body {
   .pkg-photo-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 500px) {
-  .pkg-photo-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .pkg-photo-info { padding: 16px; }
-  .pkg-photo-info h4 { font-size: 15px; font-weight: 800; }
-  .pkg-photo-info p { font-size: 12px; font-weight: 500; }
+  .pkg-photo-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .pkg-photo-info { padding: 12px 10px; }
+  .pkg-photo-info h4 { font-size: 14px; font-weight: 800; }
+  .pkg-photo-info p { font-size: 11px; font-weight: 500; line-height: 1.5; }
+  .pkg-section { padding: 60px 6px 0; }
+  .pkg-body { padding: 16px 8px; }
+  .pkg-header { padding: 28px 12px; }
+  .pkg-block { border-radius: 12px; margin: 0 auto 48px; border: none; }
 }
 
 
@@ -531,24 +535,26 @@ body {
   line-height: 1.6;
 }
 @media (max-width: 960px) {
-  .price-section { padding: 80px 16px; }
+  .price-section { padding: 60px 10px; }
 
   /* ── 모바일 가격표: 세로 카드로 전환 ── */
   .price-table-scroll { overflow-x: visible; }
   .price-table-grid {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 10px;
     min-width: 0 !important;
   }
-  .price-col { border-radius: 14px; }
-  .price-col-header { padding: 22px 20px; }
-  .price-grade { font-size: 14px; }
-  .price-value { font-size: 20px; }
-  .price-opt-row { padding: 10px 16px; margin: 0 8px; }
+  .price-col { border-radius: 12px; }
+  .price-col-header { padding: 16px 16px; }
+  .price-grade { font-size: 14px; margin-bottom: 4px; }
+  .price-label { margin-bottom: 2px; }
+  .price-value { font-size: 18px; }
+  .price-opt-row { padding: 8px 12px; margin: 0 6px; }
   .price-opt-row span:first-child { font-size: 13px; }
   .price-opt-row span:last-child { font-size: 13px; }
-  .price-opt-header { margin: 0 8px 4px; padding: 8px 16px; }
+  .price-opt-header { margin: 0 6px 2px; padding: 7px 12px; }
+  .price-col-body { padding: 4px 0; }
 
   /* 모바일에서 접힘 지원 */
   .price-col-body { display: none; }
@@ -557,11 +563,11 @@ body {
   .price-col-header::after {
     content: '';
     position: absolute;
-    right: 20px;
+    right: 16px;
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
-    width: 10px;
-    height: 10px;
+    width: 9px;
+    height: 9px;
     border-right: 2px solid rgba(255,255,255,0.5);
     border-bottom: 2px solid rgba(255,255,255,0.5);
     transition: transform 0.3s;
@@ -585,7 +591,7 @@ body {
 .comp-table-wrap {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 .comp-table {
   width: 100%;
@@ -595,15 +601,14 @@ body {
   overflow: hidden;
   box-shadow: 0 4px 24px rgba(0,0,0,0.05);
   border: 1px solid var(--border);
-  min-width: 600px;
 }
 .comp-table thead tr {
   background: linear-gradient(135deg, var(--charcoal), #3a3a3a);
 }
 .comp-table th {
-  padding: 24px 20px;
+  padding: 16px 12px;
   color: var(--white);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 800;
   text-align: center;
   vertical-align: bottom;
@@ -611,21 +616,21 @@ body {
 }
 .comp-table th span {
   display: block;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 500;
   color: var(--gold-light);
-  margin-top: 6px;
+  margin-top: 4px;
   letter-spacing: 0.5px;
 }
 .comp-table th.comp-feature {
-  width: 180px;
+  width: 110px;
   text-align: left;
-  font-size: 13px;
+  font-size: 12px;
   color: rgba(255,255,255,0.6);
 }
 .comp-table td {
-  padding: 16px 20px;
-  font-size: 14px;
+  padding: 12px 10px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--text);
   text-align: center;
@@ -636,8 +641,10 @@ body {
   text-align: left;
   font-weight: 700;
   color: var(--charcoal);
-  font-size: 14px;
+  font-size: 13px;
   background: var(--cream);
+  width: 110px;
+  word-break: keep-all;
 }
 .comp-table tr.comp-highlight td {
   background: rgba(184,149,106,0.06);
@@ -718,54 +725,60 @@ body {
 .comp-summary-prm p {
   color: rgba(255,255,255,0.6);
 }
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .comp-summary { grid-template-columns: 1fr; }
-  .comparison-section { padding: 80px 16px; }
+  .comparison-section { padding: 60px 10px; }
 
   /* ── 모바일 비교표: 카드형 전환 ── */
-  .comp-table-wrap { overflow-x: visible; }
+  .comp-table-wrap { overflow-x: visible; margin-bottom: 24px; }
   .comp-table { min-width: 0; display: block; border: none; box-shadow: none; border-radius: 0; }
   .comp-table thead { display: none; }
-  .comp-table tbody { display: flex; flex-direction: column; gap: 12px; }
-  .comp-table tr { display: flex; flex-direction: column; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+  .comp-table tbody { display: flex; flex-direction: column; gap: 8px; }
+  .comp-table tr { display: flex; flex-direction: column; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
   .comp-table tr.comp-highlight { background: rgba(184,149,106,0.04); }
   .comp-table td.comp-feature {
     display: block;
     background: linear-gradient(135deg, var(--charcoal), #3a3a3a);
     color: var(--white);
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
-    padding: 14px 18px;
+    padding: 10px 14px;
     text-align: center;
     border-bottom: none;
+    width: auto;
   }
   .comp-table td.comp-std,
   .comp-table td.comp-prm {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px 18px;
+    padding: 10px 14px;
     border-bottom: 1px solid var(--border);
     text-align: left;
-    font-size: 14px;
+    font-size: 13px;
+    width: auto;
   }
   .comp-table td.comp-std::before {
     content: '1,100만원';
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     color: var(--text-muted);
-    min-width: 80px;
+    min-width: 72px;
     flex-shrink: 0;
   }
   .comp-table td.comp-prm::before {
     content: '1,500만원';
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     color: var(--gold-dark);
-    min-width: 80px;
+    min-width: 72px;
     flex-shrink: 0;
   }
   .comp-table td:last-child { border-bottom: none; }
+
+  .comp-summary-card { padding: 24px 20px; }
+  .comp-summary-price { font-size: 24px; }
+  .comp-summary-card p { font-size: 13px; }
 }
 
 /* ── YOUTUBE ── */
@@ -1008,8 +1021,11 @@ body {
   .features-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
   .contact-inner { grid-template-columns: 1fr; }
   .contact-map { min-height: 300px; }
-  .pkg-body { padding: 40px 24px; }
-  .pkg-header { padding: 40px 24px; }
+  .pkg-body { padding: 24px 12px; }
+  .pkg-header { padding: 32px 16px; }
+  .pkg-section { padding: 80px 10px 0; }
+  .pkg-block { border-radius: 16px; margin: 0 auto 60px; }
+  .pkg-photo-grid { gap: 10px; }
   .contact-info { padding: 60px 32px; }
   .hero-packages { flex-direction: column; align-items: center; }
   .hero-pkg { width: 100%; max-width: 320px; }
