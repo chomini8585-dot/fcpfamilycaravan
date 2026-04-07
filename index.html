@@ -54,9 +54,19 @@ body {
   font-size: 22px; font-weight: 700;
   color: var(--charcoal);
   letter-spacing: -0.5px;
+  white-space: nowrap;
 }
 .nav-logo span:first-child { color: var(--gold); }
 .nav-logo-sub { font-size: 18px; color: var(--charcoal); font-family: 'Noto Sans KR', sans-serif; }
+.nav-logo-wrap { display: flex; align-items: center; gap: 0; white-space: nowrap; overflow: hidden; }
+@media (max-width: 480px) {
+  .nav-logo { font-size: 15px; letter-spacing: -0.5px; }
+  .nav-logo-sub { font-size: 12px; }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .nav-logo { font-size: 18px; }
+  .nav-logo-sub { font-size: 14px; }
+}
 .nav-links { display: flex; gap: 32px; align-items: center; }
 .nav-links a {
   text-decoration: none; color: var(--text-light);
@@ -1596,12 +1606,6 @@ body {
 <section class="hero">
   <!-- 배경 슬라이드쇼 -->
   <div class="hero-bg" id="heroBg">
-    <div class="hero-bg-slide active" style="background-image: url('images/hero_1.jpg')"></div>
-    <div class="hero-bg-slide" style="background-image: url('images/hero_2.jpg')"></div>
-    <div class="hero-bg-slide" style="background-image: url('images/hero_3.jpg')"></div>
-    <div class="hero-bg-slide" style="background-image: url('images/hero_4.jpg')"></div>
-    <div class="hero-bg-overlay"></div>
-    <div class="hero-bg-bottom"></div>
     <div class="hero-bg-glow"></div>
   </div>
   <!-- 벚꽃 캔버스 -->
