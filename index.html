@@ -133,9 +133,9 @@ body {
   z-index: 1;
   background:
     linear-gradient(135deg,
-      rgba(255,255,255,0.82) 0%,
-      rgba(250,247,242,0.72) 40%,
-      rgba(255,255,255,0.68) 100%
+      rgba(255,255,255,0.92) 0%,
+      rgba(250,247,242,0.88) 40%,
+      rgba(255,255,255,0.85) 100%
     );
 }
 /* 하단 그라데이션 강화 */
@@ -186,6 +186,9 @@ body {
   letter-spacing: 3px; text-transform: uppercase;
   margin-bottom: 28px;
   animation: heroFadeIn 1.2s ease-out 0.2s both;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 .hero h1 {
   font-family: 'Playfair Display', serif;
@@ -194,6 +197,7 @@ body {
   line-height: 1.15; margin-bottom: 20px;
   letter-spacing: -1px;
   animation: heroFadeIn 1.2s ease-out 0.3s both;
+  text-shadow: 0 1px 3px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.5);
 }
 .hero h1 em {
   font-style: normal; color: var(--gold-dark);
@@ -201,12 +205,14 @@ body {
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700; letter-spacing: 1px;
   margin-top: 10px;
+  text-shadow: 0 1px 3px rgba(255,255,255,0.8), 0 0 16px rgba(255,255,255,0.5);
 }
 .hero-sub {
   color: var(--text); font-size: 22px;
   line-height: 1.6; font-weight: 600;
   max-width: 700px; margin: 0 auto 16px;
   animation: heroFadeIn 1.2s ease-out 0.5s both;
+  text-shadow: 0 1px 3px rgba(255,255,255,0.8), 0 0 16px rgba(255,255,255,0.5);
 }
 .hero-sub strong {
   font-size: clamp(30px, 5vw, 44px);
@@ -215,6 +221,7 @@ body {
   display: block;
   margin-top: 6px;
   letter-spacing: -1px;
+  text-shadow: 0 1px 4px rgba(255,255,255,0.9), 0 0 24px rgba(255,255,255,0.6);
 }
 /* Promo top line */
 .hero-promo-row {
@@ -260,6 +267,9 @@ body {
   letter-spacing: 2px;
   text-transform: uppercase;
   white-space: nowrap;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 /* Limited badge */
 .hero-limited {
