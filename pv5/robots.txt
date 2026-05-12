@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://familycaravankorea-tech.github.io/familycaravan/sitemap.xml
