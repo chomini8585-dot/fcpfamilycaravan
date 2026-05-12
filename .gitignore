@@ -16,3 +16,6 @@ desktop.ini
 *.log
 *.tmp
 node_modules/
+
+# Local helper scripts
+_push-to-github.bat

@@ -10,4 +10,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://familycaravan.net/sitemap.xml
+Sitemap: https://www.familycaravan.net/sitemap.xml
