@@ -227,12 +227,10 @@ body {
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transform: scale(1.05);
-  transition: opacity 1.8s ease-in-out, transform 8s ease-out;
+  transition: opacity 1.8s ease-in-out;
 }
 .hero-bg-slide.active {
   opacity: 1;
-  transform: scale(1);
 }
 .hero-bg-overlay {
   position: absolute;
@@ -264,11 +262,7 @@ body {
   background: radial-gradient(ellipse at center, rgba(184,149,106,0.08) 0%, transparent 70%);
   pointer-events: none;
 }
-.hero::after {
-  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
-  background: linear-gradient(to top, var(--cream), transparent);
-  z-index: 3;
-}
+.hero::after { content: none; }
 /* 벚꽃 캔버스 */
 #sakura-canvas {
   position: absolute; inset: 0; z-index: 2;
@@ -1757,12 +1751,7 @@ body {
   <!-- 배경 슬라이드쇼 -->
   <div class="hero-bg" id="heroBg">
     <div class="hero-bg-slide active" style="background-image: url('images/og-image.jpg')"></div>
-    <div class="hero-bg-overlay"></div>
-    <div class="hero-bg-bottom"></div>
-    <div class="hero-bg-glow"></div>
   </div>
-  <!-- 벚꽃 캔버스 -->
-  <canvas id="sakura-canvas"></canvas>
   <div class="hero-content">
     <div class="hero-promo-row">
       <div class="hero-badge-inline">FCP Limousine 용인직영점</div>
