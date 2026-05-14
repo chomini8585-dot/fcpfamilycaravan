@@ -55,13 +55,36 @@ a{color:inherit;text-decoration:none}
 .promo-strip{
   position:fixed;top:0;left:0;right:0;z-index:101;
   background:var(--forest-deep);color:#fff;
-  font-size:12.5px;letter-spacing:.06em;font-weight:600;
-  padding:9px 24px;text-align:center;line-height:1.2;
+  font-size:14px;letter-spacing:.04em;font-weight:600;
+  padding:16px 24px;text-align:center;line-height:1.25;
+  display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 14px;
 }
-.promo-strip em{font-family:var(--ff-display);font-style:italic;color:#f3d9a3;font-weight:500;margin:0 6px}
-.promo-strip em.price{color:var(--red-bright);font-weight:700;font-size:14.5px}
-.promo-strip em.save{color:#f3d9a3;font-weight:700;font-size:14.5px}
-.promo-strip .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:#f3d9a3;margin:0 12px;vertical-align:middle}
+.promo-strip em{font-family:var(--ff-display);font-style:italic;color:#f3d9a3;font-weight:500;margin:0 4px}
+.promo-strip em.price{
+  color:var(--red-bright);font-weight:700;
+  font-size:28px;letter-spacing:.01em;
+  display:inline-flex;align-items:baseline;gap:4px;
+}
+.promo-strip em.price .num{font-size:38px;font-weight:800;line-height:1;font-style:normal;letter-spacing:-.01em}
+.promo-strip em.price .krw,
+.promo-strip em.price .man{font-size:22px;font-weight:700;font-style:normal}
+.promo-strip em.save{
+  color:#f3d9a3;font-weight:700;
+  font-size:22px;display:inline-flex;align-items:baseline;gap:3px;
+}
+.promo-strip em.save .num{font-size:28px;font-weight:800;line-height:1;font-style:normal}
+.promo-strip em.save .man{font-size:18px;font-weight:700;font-style:normal}
+.promo-strip .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:#f3d9a3;margin:0 4px;vertical-align:middle;opacity:.7}
+@media (max-width:640px){
+  .promo-strip{font-size:12px;padding:12px 16px;gap:4px 10px}
+  .promo-strip em.price{font-size:22px}
+  .promo-strip em.price .num{font-size:30px}
+  .promo-strip em.price .krw,
+  .promo-strip em.price .man{font-size:17px}
+  .promo-strip em.save{font-size:17px}
+  .promo-strip em.save .num{font-size:22px}
+  .promo-strip em.save .man{font-size:14px}
+}
 
 /* ===== Topbar ===== */
 .topbar{
@@ -740,7 +763,7 @@ footer{background:var(--forest-deep);color:rgba(255,255,255,.78);padding:40px 40
 
 <!-- ===== Top promo strip ===== -->
 <div class="promo-strip">
-  <em>Launch Special</em><span class="dot"></span>론칭 특가 <em class="price">337만원~</em><span class="dot"></span>기간·수량 한정 · <em class="save">153만원 할인</em>
+  <em>Launch Special</em><span class="dot"></span>론칭 특가 <em class="price"><span class="krw">₩</span><span class="num">337</span><span class="man">만원~</span></em><span class="dot"></span>기간·수량 한정 · <em class="save"><span class="num">153</span><span class="man">만원 할인</span></em>
 </div>
 
 <!-- ===== Topbar ===== -->
@@ -763,14 +786,14 @@ footer{background:var(--forest-deep);color:rgba(255,255,255,.78);padding:40px 40
       <div class="hero-slides">
         <img class="hero-slide active" src="images/hero.jpg" alt="FCP PV5 카고 풀엠보 — 오픈격벽 아이보리">
         <img class="hero-slide" src="images/partition_nv.jpg" alt="FCP PV5 카고 풀엠보 — 오픈격벽 네이비">
-        <img class="hero-slide" src="images/c_orange.jpg" alt="FCP PV5 카고 풀엠보 — 오렌지">
+        <img class="hero-slide" src="images/c_orange.jpg" alt="FCP PV5 카고 풀엠보 — 브라운">
         <img class="hero-slide" src="images/c_ivoryblack.jpg" alt="FCP PV5 카고 풀엠보 — 아이보리 블랙 투톤">
         <img class="hero-slide" src="images/c_navy.jpg" alt="FCP PV5 카고 풀엠보 — 올네이비">
       </div>
       <div class="hero-dots" role="tablist" aria-label="대표 인테리어 컬러">
         <button class="hero-dot active" data-i="0" aria-label="오픈격벽 아이보리"></button>
         <button class="hero-dot" data-i="1" aria-label="오픈격벽 네이비"></button>
-        <button class="hero-dot" data-i="2" aria-label="오렌지"></button>
+        <button class="hero-dot" data-i="2" aria-label="브라운"></button>
         <button class="hero-dot" data-i="3" aria-label="아이보리 블랙 투톤"></button>
         <button class="hero-dot" data-i="4" aria-label="올네이비"></button>
       </div>
@@ -1051,9 +1074,9 @@ footer{background:var(--forest-deep);color:rgba(255,255,255,.78);padding:40px 40
       </div>
     </div>
     <div class="color-card">
-      <div class="ph"><img src="images/c_orange.jpg" alt="오렌지 단색" loading="lazy" decoding="async"></div>
+      <div class="ph"><img src="images/c_orange.jpg" alt="브라운 단색" loading="lazy" decoding="async"></div>
       <div class="meta">
-        <span class="name"><em>오렌지</em> 단색</span>
+        <span class="name"><em>브라운</em> 단색</span>
         <span class="swatch"><span class="sw" style="background:#b85a2a"></span></span>
       </div>
     </div>
@@ -1072,9 +1095,9 @@ footer{background:var(--forest-deep);color:rgba(255,255,255,.78);padding:40px 40
       </div>
     </div>
     <div class="color-card">
-      <div class="ph"><img src="images/c_orangeblack.jpg" alt="오렌지 + 블랙 투톤" loading="lazy" decoding="async"></div>
+      <div class="ph"><img src="images/c_orangeblack.jpg" alt="브라운 + 블랙 투톤" loading="lazy" decoding="async"></div>
       <div class="meta">
-        <span class="name">오렌지·<em>블랙</em></span>
+        <span class="name">브라운·<em>블랙</em></span>
         <span class="swatch"><span class="sw" style="background:#b85a2a"></span><span class="sw" style="background:#1a1a1a"></span></span>
       </div>
     </div>
