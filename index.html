@@ -244,6 +244,122 @@ img{max-width:100%;display:block}
   pointer-events:none;
 }
 .topnav > *{pointer-events:auto}
+.topnav-left{display:flex;align-items:center;gap:16px}
+
+/* ============================
+   HAMBURGER + DRAWER MENU
+   ============================ */
+.menu-btn{
+  width:46px;height:46px;border-radius:50%;
+  background:rgba(255,255,255,.15);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.28);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;
+  cursor:pointer;padding:0;
+  transition:all .25s ease;
+  flex-shrink:0;
+}
+.menu-btn:hover{background:rgba(255,255,255,.25);border-color:rgba(255,255,255,.5)}
+.menu-btn span{
+  width:20px;height:2px;background:#fff;border-radius:1px;
+  transition:transform .35s ease,opacity .25s ease;
+  transform-origin:center;
+}
+.menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn.open span:nth-child(2){opacity:0;transform:translateX(-6px)}
+.menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.menu-overlay{
+  position:fixed;inset:0;z-index:200;
+  background:rgba(14,22,18,.65);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  opacity:0;pointer-events:none;
+  transition:opacity .4s ease;
+}
+.menu-overlay.open{opacity:1;pointer-events:auto}
+
+.menu-drawer{
+  position:fixed;top:0;left:0;bottom:0;
+  width:min(440px,90vw);z-index:210;
+  background:linear-gradient(180deg,#0E1612 0%,#142019 100%);
+  color:#fff;
+  padding:90px 44px 44px;
+  transform:translateX(-101%);
+  transition:transform .55s cubic-bezier(.7,0,.15,1);
+  display:flex;flex-direction:column;
+  border-right:1px solid rgba(255,255,255,.08);
+  box-shadow:0 0 60px -20px rgba(0,0,0,.8);
+  overflow-y:auto;
+}
+.menu-drawer.open{transform:translateX(0)}
+
+.menu-close{
+  position:absolute;top:26px;right:26px;
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(255,255,255,.1);color:#fff;
+  font-size:22px;font-weight:300;line-height:1;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;border:1px solid rgba(255,255,255,.22);
+  padding:0;
+  transition:all .3s ease;
+}
+.menu-close:hover{background:rgba(255,255,255,.2);transform:rotate(90deg);border-color:rgba(255,255,255,.5)}
+
+.menu-brand{
+  font-family:var(--ff-display);
+  font-size:11px;font-weight:600;
+  color:rgba(255,255,255,.55);letter-spacing:.22em;text-transform:uppercase;
+  padding-bottom:22px;margin-bottom:28px;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+.menu-nav{display:flex;flex-direction:column;margin-bottom:auto;padding-bottom:28px}
+.menu-nav a{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:22px 0;
+  font-family:var(--ff-display);
+  font-size:30px;font-weight:400;letter-spacing:-.01em;color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.1);
+  text-decoration:none;
+  transition:all .3s ease;
+}
+.menu-nav a .label{display:flex;flex-direction:column;gap:4px}
+.menu-nav a .label small{
+  font-family:var(--ff-body);font-size:11px;font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.5);line-height:1;
+}
+.menu-nav a em{font-style:italic;font-weight:500}
+.menu-nav a.pv5 em{color:#9CE5BA}
+.menu-nav a.carnival em{color:var(--gold)}
+.menu-nav a .arrow{
+  font-size:24px;color:rgba(255,255,255,.5);
+  transition:transform .3s ease,color .3s ease;
+}
+.menu-nav a:hover{padding-left:8px;color:#fff}
+.menu-nav a:hover .arrow{transform:translateX(8px);color:#fff}
+
+.menu-footer{padding-top:28px;border-top:1px solid rgba(255,255,255,.12)}
+.menu-footer .tel{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--ff-display);font-size:26px;font-weight:600;
+  color:#fff;text-decoration:none;margin-bottom:14px;
+  letter-spacing:.005em;
+  transition:color .25s;
+}
+.menu-footer .tel:hover{color:var(--gold)}
+.menu-footer .info{
+  font-size:13px;color:rgba(255,255,255,.65);
+  line-height:1.55;
+}
+.menu-footer .info strong{color:rgba(255,255,255,.85);font-weight:600;display:block;margin-bottom:2px}
+
+@media (max-width:560px){
+  .menu-drawer{padding:78px 28px 32px}
+  .menu-nav a{font-size:26px;padding:18px 0}
+  .menu-close{top:20px;right:20px;width:36px;height:36px;font-size:20px}
+  .menu-btn{width:42px;height:42px}
+  .menu-btn span{width:18px}
+  .menu-footer .tel{font-size:22px}
+}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .logo-mark{
   font-family:var(--ff-display);font-weight:normal;
@@ -359,9 +475,39 @@ img{max-width:100%;display:block}
 
 <!-- TOP NAV -->
 <header class="topnav">
-  <h1 class="logo-mark"><span class="lm-main">FCP Limousine</span> <span class="lm-sub">용인직영점 패밀리카라반</span></h1>
+  <div class="topnav-left">
+    <button class="menu-btn" id="menuBtn" aria-label="메뉴 열기" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <h1 class="logo-mark"><span class="lm-main">FCP Limousine</span> <span class="lm-sub">용인직영점 패밀리카라반</span></h1>
+  </div>
   <a href="tel:1877-8262" class="topnav-tel">📞 1877-8262</a>
 </header>
+
+<!-- DRAWER MENU -->
+<div class="menu-overlay" id="menuOverlay"></div>
+<aside class="menu-drawer" id="menuDrawer" aria-hidden="true">
+  <button class="menu-close" id="menuClose" aria-label="메뉴 닫기">×</button>
+  <div class="menu-brand">FCP Limousine · 용인직영점 패밀리카라반</div>
+  <nav class="menu-nav">
+    <a href="pv5/" class="pv5">
+      <span class="label"><small>PV5 · NEW</small>PV5<em> FCP리무진</em></span>
+      <span class="arrow">→</span>
+    </a>
+    <a href="carnival/" class="carnival">
+      <span class="label"><small>CARNIVAL · SIGNATURE</small>Carnival<em> FCP리무진</em></span>
+      <span class="arrow">→</span>
+    </a>
+  </nav>
+  <div class="menu-footer">
+    <a href="tel:1877-8262" class="tel">📞 1877-8262</a>
+    <div class="info">
+      <strong>FCP리무진 패밀리카라반 용인직영점</strong>
+      경기도 용인시 기흥구 구성로 339<br>
+      평일 09:00 – 18:00 · 토 10:00 – 17:00
+    </div>
+  </div>
+</aside>
 
 <!-- TWO-HALF GATE -->
 <main class="gate">
@@ -398,6 +544,38 @@ img{max-width:100%;display:block}
     <span class="hours"><span>평일 09:00 – 18:00</span><span>토 10:00 – 17:00</span></span>
   </div>
 </div>
+
+<script>
+// ===== DRAWER MENU =====
+(function(){
+  const btn = document.getElementById('menuBtn');
+  const drawer = document.getElementById('menuDrawer');
+  const overlay = document.getElementById('menuOverlay');
+  const closeBtn = document.getElementById('menuClose');
+  if(!btn||!drawer||!overlay) return;
+
+  function open(){
+    btn.classList.add('open');
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    btn.setAttribute('aria-expanded','true');
+    drawer.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }
+  function close(){
+    btn.classList.remove('open');
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+    drawer.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
+  btn.addEventListener('click', ()=>{ drawer.classList.contains('open') ? close() : open(); });
+  overlay.addEventListener('click', close);
+  closeBtn.addEventListener('click', close);
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape' && drawer.classList.contains('open')) close(); });
+})();
+</script>
 
 </body>
 </html>
