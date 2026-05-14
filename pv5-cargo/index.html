@@ -74,6 +74,19 @@ a{color:inherit;text-decoration:none}
   transition:all .4s ease;
 }
 .brand-wrap{display:flex;flex-direction:column;gap:4px}
+.home-back{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  font-weight:700;color:var(--gold);
+  text-decoration:none;
+  padding:4px 10px 4px 8px;margin-bottom:3px;
+  border:1px solid var(--gold);border-radius:999px;
+  background:rgba(255,255,255,.7);
+  width:fit-content;line-height:1;
+  transition:all .25s ease;
+}
+.home-back:hover{background:var(--gold);color:#fff;transform:translateX(-2px)}
+.home-back .arrow{font-size:13px;line-height:1}
 .brand{font-family:var(--ff-display);font-weight:600;font-size:15px;letter-spacing:.14em;text-transform:uppercase;line-height:1}
 .brand em{font-style:italic;font-weight:400;color:var(--gold);letter-spacing:.08em}
 .brand-sub{font-size:10.5px;letter-spacing:.22em;color:var(--ink-muted);font-weight:600;line-height:1}
@@ -733,6 +746,7 @@ footer{background:var(--forest-deep);color:rgba(255,255,255,.78);padding:40px 40
 <!-- ===== Topbar ===== -->
 <header class="topbar">
   <div class="brand-wrap">
+    <a href="../" class="home-back" aria-label="메인 페이지로"><span class="arrow">←</span> 메인</a>
     <div class="brand">FCP <em>Limousine</em> 용인직영점</div>
     <div class="brand-sub">기아 PV5 카고 · 풀엠보 패키지</div>
   </div>
