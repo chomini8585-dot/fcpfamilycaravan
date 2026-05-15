@@ -19,3 +19,14 @@ node_modules/
 
 # Local helper scripts
 _push-to-github.bat
+
+# Zip / archive files (외부에서 받은 zip이 자동 제외되어 사고 방지)
+*.zip
+*.tar.gz
+*.7z
+*.rar
+
+# Stray extracted folders (zip 풀린 결과물)
+familycaravan-main/
+fc-fcpembo*/
+pv5-di/
