@@ -333,6 +333,13 @@ img{max-width:100%;display:block}
 }
 .menu-nav a em{font-style:italic;font-weight:500}
 .menu-nav a.pv5-cargo em{color:#7BC4E8}
+.menu-nav a.pv5-dining em{color:#F2A27C}
+.menu-nav a .new{
+  display:inline-block;margin-left:10px;padding:4px 8px;border-radius:999px;
+  background:#B4532A;color:#fff;
+  font-family:var(--ff-body);font-style:normal;font-size:10px;font-weight:800;
+  letter-spacing:.14em;line-height:1;vertical-align:middle;
+}
 .menu-nav a.pv5 em{color:#9CE5BA}
 .menu-nav a.carnival em{color:var(--gold)}
 .menu-nav a .arrow{
@@ -357,6 +364,13 @@ img{max-width:100%;display:block}
 }
 .menu-footer .info strong{color:rgba(255,255,255,.85);font-weight:600;display:block;margin-bottom:2px}
 
+@media (max-height:960px){
+  .menu-drawer{padding-top:76px}
+  .menu-nav a{padding:16px 0;font-size:27px}
+}
+@media (max-width:560px) and (max-height:960px){
+  .menu-drawer .menu-nav a{padding:15px 0}
+}
 @media (max-width:560px){
   .menu-drawer{padding:78px 28px 32px}
   .menu-nav a{font-size:26px;padding:18px 0}
@@ -499,12 +513,16 @@ img{max-width:100%;display:block}
       <span class="label"><small>PV5 · NEW</small>PV5<em> FCP리무진</em></span>
       <span class="arrow">→</span>
     </a>
-    <a href="carnival/" class="carnival">
-      <span class="label"><small>CARNIVAL · SIGNATURE</small>Carnival<em> FCP리무진</em></span>
-      <span class="arrow">→</span>
-    </a>
     <a href="pv5-embo/" class="pv5-cargo">
       <span class="label"><small>PV5 DESIGN CARGO · 풀트리밍</small>PV5 Design Cargo<em> 풀트리밍</em></span>
+      <span class="arrow">→</span>
+    </a>
+    <a href="pv5-dining/" class="pv5-dining">
+      <span class="label"><small>PV5 DESIGN CARGO · 다이닝룸</small>PV5 Design Cargo<em> 다이닝룸<span class="new">NEW</span></em></span>
+      <span class="arrow">→</span>
+    </a>
+    <a href="carnival/" class="carnival">
+      <span class="label"><small>CARNIVAL · SIGNATURE</small>Carnival<em> FCP리무진</em></span>
       <span class="arrow">→</span>
     </a>
   </nav>
