@@ -505,6 +505,39 @@ a.pkg-tab:hover{border-color:var(--gold);color:var(--gold-deep);transform:transl
   box-shadow:0 10px 24px -10px rgba(28,23,20,.5);
 }
 
+/* ===== Video (click-to-play, same as pv5-embo) ===== */
+.video-section{padding:8px 40px 56px;background:var(--bg)}
+.video-inner{max-width:1200px;margin:0 auto}
+.video-frame{
+  position:relative;border-radius:18px;overflow:hidden;cursor:pointer;
+  aspect-ratio:16/9;background:#1a1a1a;
+  box-shadow:0 40px 80px -40px rgba(28,20,12,.25),0 20px 40px -20px rgba(0,0,0,.1);
+}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.video-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.video-frame::before{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(0,0,0,.04) 0%,rgba(0,0,0,.28) 100%);
+  transition:opacity .3s ease;
+}
+.video-frame.playing::before{opacity:0}
+.video-play{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  z-index:2;width:86px;height:86px;border-radius:50%;border:0;cursor:pointer;
+  background:var(--red);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 18px 44px -12px rgba(0,0,0,.55),0 0 0 8px rgba(255,255,255,.14);
+  transition:transform .3s cubic-bezier(.4,0,.2,1),background .3s ease;
+}
+.video-frame:hover .video-play{transform:translate(-50%,-50%) scale(1.09);background:var(--red-deep)}
+.video-play::after{
+  content:"";width:0;height:0;margin-left:7px;
+  border-style:solid;border-width:16px 0 16px 27px;
+  border-color:transparent transparent transparent #fff;
+}
+.video-frame.playing .video-poster,
+.video-frame.playing .video-play{display:none}
+
 /* ===== Gallery ===== */
 .gallery-wrap{max-width:1200px;margin:0 auto;padding:8px 40px 56px}
 .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
@@ -749,6 +782,9 @@ footer{background:var(--forest-deep);color:rgba(255,255,255,.78);padding:40px 40
   .modes{grid-template-columns:1fr;gap:10px;justify-items:stretch}
   .mode-arrow{transform:rotate(90deg);justify-self:center}
   .gallery-wrap{padding:8px 24px 48px}
+  .video-section{padding:8px 16px 40px}
+  .video-play{width:68px;height:68px}
+  .video-play::after{border-width:13px 0 13px 22px;margin-left:6px}
   .gallery-grid{grid-template-columns:repeat(2,1fr);gap:12px}
   .gallery-note{padding:0 24px 32px;margin-top:-28px}
   .deck-wrap{grid-template-columns:1fr;padding:8px 24px 24px;gap:28px}
@@ -1098,6 +1134,27 @@ footer{background:var(--forest-deep);color:rgba(255,255,255,.78);padding:40px 40
   </div>
 </div>
 
+<!-- ===== Video ===== -->
+<div class="section-head" style="padding-bottom:20px">
+  <div class="eyebrow">
+    <span class="line"></span>
+    <span class="tag">영상으로 보기</span>
+  </div>
+  <h3>390만원의 행복,<br><em>영상</em>으로 확인하세요.</h3>
+  <p class="lede">패밀리카라반 유튜브에서 PV5 카고 다이닝룸을 직접 확인해 보세요.</p>
+</div>
+
+<section class="video-section">
+  <div class="video-inner">
+    <div class="video-frame" id="ytVideo" data-id="rZdXE3ka6ls" data-start="0" role="button" tabindex="0" aria-label="PV5 카고 다이닝룸 영상 재생">
+      <img class="video-poster" src="https://i.ytimg.com/vi/rZdXE3ka6ls/maxresdefault.jpg"
+           onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/rZdXE3ka6ls/hqdefault.jpg'"
+           alt="PV5 카고 다이닝룸 — 390만원의 행복 영상" loading="lazy" decoding="async">
+      <button class="video-play" type="button" aria-label="영상 재생"></button>
+    </div>
+  </div>
+</section>
+
 <!-- ===== Gallery ===== -->
 <div class="section-head" style="padding-bottom:20px">
   <div class="eyebrow">
@@ -1444,6 +1501,28 @@ const obs = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 document.querySelectorAll('[data-anim]').forEach(el => obs.observe(el));
+
+// Click-to-play YouTube (no autoplay-on-load → avoids embed errors)
+(function(){
+  const frame = document.getElementById('ytVideo');
+  if (!frame) return;
+  function play(){
+    if (frame.classList.contains('playing')) return;
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + frame.dataset.id +
+      '?start=' + (frame.dataset.start || 0) + '&autoplay=1&rel=0&playsinline=1';
+    iframe.title = 'PV5 카고 다이닝룸 — 390만원의 행복';
+    iframe.allow = 'autoplay; encrypted-media; picture-in-picture; web-share; fullscreen';
+    iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+    iframe.allowFullscreen = true;
+    frame.appendChild(iframe);
+    frame.classList.add('playing');
+  }
+  frame.addEventListener('click', play);
+  frame.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(); }
+  });
+})();
 
 // Gallery lightbox
 (function(){
