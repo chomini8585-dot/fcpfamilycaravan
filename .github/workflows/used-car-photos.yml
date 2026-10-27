@@ -1,0 +1,50 @@
+# 중고차 사진 자동 정리
+# used-cars/cars/ 에 사진이나 info.txt를 올리면 자동으로 실행됩니다.
+#  - 사진을 1600px 이하로 압축 · 위치정보 삭제 · HEIC/PNG → JPG
+#  - 사진 이름을 1.jpg, 2.jpg … 로 정리, 대표사진 번호 맞춤
+#  - used-cars/cars/index.json (홈페이지가 읽는 목록) 갱신
+name: 중고차 사진 자동 정리
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "used-cars/cars/**"
+      - "!used-cars/cars/index.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: used-car-photos
+  cancel-in-progress: false
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 사진 처리 도구 설치
+        run: pip install "pillow>=10.4,<12" "pillow-heif>=0.18,<2"
+
+      - name: 사진 정리
+        run: python .github/scripts/optimize_used_cars.py used-cars/cars
+
+      - name: 정리된 사진 올리기
+        run: |
+          git add -A used-cars/cars
+          if git diff --cached --quiet; then
+            echo "바뀐 사진 없음"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "중고차 사진 자동 정리 (압축 · 번호 정리)"
+          git pull --rebase origin main
+          git push origin HEAD:main
