@@ -1,0 +1,287 @@
+@charset "utf-8";
+
+
+/* -- (組み込むサイト側ですでに用意してあるなら不要なCSS) ----------------------------------------------------------------------- */
+
+/* * {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	font: inherit;
+	line-height: 1.8;
+}
+*/
+
+
+
+/* -- contents-maker-2-area common ----------------------------------------------------------------------- */
+
+.contents-maker-2-area,
+.contents-maker-2-area * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+/* これが各投稿 */
+.cm2-box {
+	border-bottom: 1px solid #c5a64b;
+}
+
+
+.cm2-box img {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+
+
+
+
+/* -- コンテンツ幅の振り分け ----------------------------------------------------------------------- */
+
+.cm2-width-s {
+	width: 840px;
+	margin: 0 auto;
+	padding: 90px 0 50px;
+}
+
+.cm2-width-m {
+	width: 960px;
+	margin: 0 auto;
+	padding: 90px 0 50px;
+}
+
+.cm2-width-l {
+	width: 1200px;
+	margin: 0 auto;
+	padding: 90px 0 50px;
+}
+
+
+
+
+/* -- カラム数の振り分け ----------------------------------------------------------------------- */
+
+.cm2-columns-area {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.cm2-columns-1 div {
+	width: 100%;
+}
+
+.cm2-columns-2 div {
+	width: 48%;
+}
+
+.cm2-columns-3 div {
+	width: 31%;
+}
+
+
+
+
+/* -- 各投稿の中身 ----------------------------------------------------------------------- */
+
+.cm2-sub-title {
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.cm2-main-title,
+.cm2-main-title * {
+   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+	text-align: center;
+	font-weight: bold;
+	font-size: 36px;
+	line-height: 1;
+
+}
+
+.cm2-top-text {
+	width: 760px;
+	margin: 40px auto;
+	font-size: 18px;
+}
+
+.cm2-columns-area {
+	margin: 40px auto;
+}
+
+.cm2-bottom-text {
+	width: 760px;
+	margin: 40px auto;
+	color: #cc0000;
+}
+
+
+
+
+/* -- 2カラム用、3カラム用、4カラム用の振り分けが必要なCSS ----------------------------------------------------------------------- */
+
+.cm2-columns-1 .cm2-columns-image + .cm2-columns-text {
+	margin-top: 40px;
+}
+
+.cm2-columns-2 .cm2-columns-image + .cm2-columns-text {
+	margin-top: 20px;
+}
+
+.cm2-columns-3 .cm2-columns-image + .cm2-columns-text {
+	margin-top: 10px;
+}
+
+
+
+
+/* -- 例外的なレイアウト設定 ----------------------------------------------------------------------- */
+
+.cm2-columns-1 div:nth-child( n + 2 ) .cm2-columns-image {
+	margin-top: 80px;
+}
+
+.cm2-columns-2 div:nth-child( n + 3 ) { /* 2カラムの3つ目画像を中央寄せにする設定 */
+	margin: 0 auto;
+}
+
+.cm2-columns-2 div:nth-child( n + 3 ) .cm2-columns-image {
+	margin-top: 80px;
+}
+
+
+
+
+
+
+
+
+/* -- タブレット・スマホ設定 ---------------------------------------------------------------------------------------------------------- */
+
+
+@media screen and ( max-width: 1199px ) {
+
+
+.cm2-width-s,
+.cm2-width-m,
+.cm2-width-l {
+	width: 100%;
+}
+
+.cm2-top-text,
+.cm2-bottom-text {
+	width: 80%;
+}
+
+
+}
+
+
+
+
+
+
+
+
+/* -- スマホ設定 ---------------------------------------------------------------------------------------------------------- */
+
+
+@media screen and ( max-width: 640px ) {
+
+
+.cm2-columns-2 div {
+	width: 100%;
+}
+
+.cm2-columns-3 div {
+	width: 100%;
+}
+
+
+.cm2-columns-2 div:nth-child( n + 2 ) .cm2-columns-image,
+.cm2-columns-3 div:nth-child( n + 2 ) .cm2-columns-image {
+	margin-top: 80px;
+}
+
+
+.cm2-columns-2 div:nth-child( n + 2 ) .cm2-columns-text:first-child,
+.cm2-columns-3 div:nth-child( n + 2 ) .cm2-columns-text:first-child {
+margin-top: 40px;
+}
+
+
+}
+
+
+
+
+
+
+
+/* -- BOTTON設定 ---------------------------------------------------------------------------------------------------------- */
+.button-mobile-001 {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    width: 300px;
+    padding: 15px 20px 15px 20px;
+    background-color: #c80101;
+    color: #fff;
+    font-size: 16px;
+    border: 1px solid #c80101;
+    transition: all .3s ease 0s;
+}
+
+.button-mobile-001:hover {
+    background-color: #830000;
+    border: 1px solid #830000;
+    color: #fff;
+}
+
+.button-mobile-002 {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    width: 300px;
+    padding: 15px 20px 15px 20px;
+    background-color: #066187;
+    color: #fff;
+    font-size: 15px;
+    border: 1px solid #066187;
+    transition: all .3s ease 0s;
+}
+
+.button-mobile-002:hover {
+    background-color: #0c2836;
+    border: 1px solid #0c2836;
+    color: #fff;
+}
+
+.button-mobile-003 {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    width: 300px;
+    padding: 15px 20px 15px 20px;
+    background-color: #008a15;
+    color: #fff;
+    font-size: 15px;
+    border: 1px solid #008a15;
+    transition: all .3s ease 0s;
+}
+
+.button-mobile-003:hover {
+    background-color: #00500c;
+    border: 1px solid #00500c;
+    color: #fff;
+}
+
+.text-center {
+    text-align: center;
+}
+

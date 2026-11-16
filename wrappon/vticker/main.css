@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+/*********************************************************************
+Licensed under the MIT License:
+http://www.opensource.org/licenses/mit-license.php
+*********************************************************************/
+/*--Base------------------------------------------------------------*/
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+/*--Reset-----------------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    border: none;
+    vertical-align: middle;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+/*--Text------------------------------------------------------------*/
+body {
+    font-size: 88%;
+    font-weight: normal;
+    font-family: "YakuHanJP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Yu Gothic UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif, Arial;
+}
+
+/*-- common ----------------------------------------------------------*/
+#header h1 {
+    font-size: 85%;
+}
+
+#header h2,
+#contents h3,
+#header p,
+#contents p,
+#footer p {
+    padding: 10px;
+}
+
+.container h2 {
+    padding: 10px 0 0 10px;
+}
+
+/*-- vticker ----------------------------------------------------------*/
+ul.message {
+    font-family: "YakuHanJP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Yu Gothic UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif, Arial;
+    font-size: 100%;
+    line-height: 3em;
+    margin-left: 40px;
+    text-align: left;
+}
+
+h2.title-vticker {
+    color: #546a7c;
+    font-weight: 500;
+    padding-left: 3px;
+    transform: scale(1, 1.3);
+    -moz-transform: scale(1, 1.3);
+    /* Firefox */
+    -webkit-transform: scale(1, 1.3);
+    /* Chrome,Safari */
+    -o-transform: scale(1, 1.3);
+    /* Opera */
+    -ms-transform: scale(1, 1.3);
+    /* IE */
+    transform: scale(1, 1.3);
+    /* CSS3 */
+}
+
+#vticker {
+    padding-left: 30px;
+}

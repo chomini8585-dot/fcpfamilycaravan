@@ -1,0 +1,54 @@
+body.company-page, .company-page p, .company-page h1, .company-page h2, .company-page h3, .company-page h4, .company-page a, .company-page button {font-family:"Noto Sans KR","Malgun Gothic",Arial,sans-serif;word-break:keep-all;overflow-wrap:anywhere;}
+.company-page {color:#333;}
+.company-page img {max-width:100%;height:auto;}
+.company-page .wow {visibility:visible!important;opacity:1!important;}
+.company-page [id] {scroll-margin-top:100px;}
+.company-hero {padding-top:70px;background:#3c5369;}
+.company-hero-visual {position:relative;width:100%;max-width:1920px;margin:auto;}
+.company-hero-visual>img {display:block;width:100%;height:auto;}
+.company-hero-slogan {position:absolute;left:16%;top:14%;width:34%;height:61%;display:flex;align-items:center;padding:2.2%;box-sizing:border-box;background:#183b32;color:#fff;font-size:clamp(16px,4.9vw,94px);font-weight:800;line-height:1.08;letter-spacing:-.035em;}
+.company-hero-slogan span {color:#fff;line-height:inherit;}
+.company-hero-copy {color:#fff;text-align:center;padding-top:34px;padding-bottom:40px;}
+.company-hero-copy h1 {font-size:40px;font-weight:700;margin:0 0 18px;color:#fff;}
+.company-hero-copy p {font-size:20px;line-height:1.65;margin:0;color:#eef5fa;}
+.company-home-button {padding-top:30px;margin:0!important;}
+.company-mobile-contact {display:none;padding:25px 15px 0;}
+.company-copy .cm2-width-s {max-width:100%;padding:65px 0 10px;}
+.company-copy .cm2-main-title {font-size:34px;line-height:1.4;margin:0 0 36px;color:#123b59;}
+.company-copy p {font-size:18px;line-height:1.9;margin:0 0 24px;}
+.company-copy .president-signature {text-align:right;margin-top:35px;}
+.company-profile-item {border-left:5px solid #c1c1c1;padding-left:18px;margin:0 0 30px;}
+.company-profile-item h3 {font-size:22px;font-weight:700;line-height:1.5;margin:0 0 12px;}
+.company-profile-item p {margin-bottom:10px;}
+.company-inline-link {display:inline-block;color:#a9440e;text-decoration:underline;text-underline-offset:5px;}
+.company-philosophy {padding-bottom:35px;}
+.philosophy-item {margin:0 0 30px;}
+.philosophy-item h3 {display:inline-block;background:#002d72;color:#fff;font-size:21px;font-weight:700;line-height:1.6;padding:5px 10px;margin:0 0 12px;}
+.philosophy-item p {margin-left:12px;}
+.company-page #section04-link {padding-bottom:40px;}
+.company-page #section04-link .font-16 {font-size:17px;line-height:1.8;}
+.company-gallery {position:relative;width:100%;margin-bottom:30px;background:#f2f4f5;}
+.company-gallery>img {display:block;width:100%;aspect-ratio:1/1;object-fit:contain;}
+.company-gallery>img[hidden] {display:none;}
+.company-gallery-controls {display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px;background:#f1f3f4;font-size:14px;}
+.company-gallery-controls button {border:1px solid #aab5bc;background:white;color:#233e51;padding:9px 12px;cursor:pointer;}
+.company-gallery-controls button:hover {background:#233e51;color:#fff;}
+.company-domestic-contact {display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:40px;margin-bottom:40px;padding:30px 35px;border-top:3px solid #e56b28;background:#f4f7f5;}
+.company-domestic-contact strong {font-size:22px;line-height:1.5;color:#163d31;}
+.company-domestic-contact p {font-size:17px;line-height:1.7;margin:10px 0 0;}
+.company-domestic-contact>a {font-size:30px;font-weight:700;color:#ad4115;white-space:nowrap;}
+.company-page .cis-text p {line-height:1.7;}
+.company-page .cis-text .mt-min-1, .company-page .cis-text .mt-min-10 {margin-top:8px;}
+@media(max-width:767px){
+ .company-hero {padding-top:60px;}
+ .company-hero-copy {padding:28px 20px 32px;}
+ .company-hero-copy h1 {font-size:30px;}
+ .company-hero-copy p {font-size:17px;}
+ .company-mobile-contact {display:block;}
+ .company-copy .cm2-width-s {padding-top:45px;}
+ .company-copy .cm2-main-title {font-size:28px;margin-bottom:25px;}
+ .company-copy p {font-size:16px;line-height:1.85;}
+ .company-profile-item h3, .philosophy-item h3 {font-size:19px;}
+ .company-domestic-contact {margin:30px 15px;flex-direction:column;align-items:flex-start;padding:24px;}
+ .company-domestic-contact>a {font-size:29px;}
+}
