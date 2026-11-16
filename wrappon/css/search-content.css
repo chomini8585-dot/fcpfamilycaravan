@@ -1,0 +1,11 @@
+/* Visible Korean product introductions and customer questions. */
+.ko-product-intro,.ko-faq{max-width:1120px;margin:40px auto;padding:32px 36px;background:#fff;color:#243c3a;border:1px solid #e0e9e5;border-radius:12px;box-sizing:border-box}
+.ko-product-intro-label{margin:0 0 8px;color:#366c58;font-size:13px;font-weight:700;letter-spacing:.04em}
+.ko-product-intro{margin-bottom:110px}
+.ko-product-intro h1,.ko-product-intro h2,.ko-faq h2{margin:0 0 18px;font-size:28px;line-height:1.5;font-weight:700;color:#1c4438;word-break:keep-all}
+.ko-product-intro p,.ko-faq p{font-size:16px;line-height:1.9;word-break:keep-all;overflow-wrap:anywhere;margin:0 0 14px}
+.ko-product-intro a,.ko-faq a{color:#27634c;text-decoration:underline;text-underline-offset:3px}
+.ko-faq article+article{border-top:1px solid #e6ece8;margin-top:22px;padding-top:22px}
+.ko-faq h3{font-size:19px;line-height:1.6;font-weight:700;margin:0 0 10px;color:#243c3a}
+.ko-product-intro p:last-child,.ko-faq p:last-child{margin-bottom:0}
+@media(max-width:767px){.ko-product-intro,.ko-faq{margin:24px 16px;padding:24px 20px}.ko-product-intro{margin-bottom:60px}.ko-product-intro h1,.ko-product-intro h2,.ko-faq h2{font-size:23px}.ko-product-intro p,.ko-faq p{font-size:15px}.ko-faq h3{font-size:18px}}

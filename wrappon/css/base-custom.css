@@ -1,0 +1,2260 @@
+/*    GLOBAL STYLES
+/* Theme Name: Template-Default Theme ( Responsive Website Template )
+Author:WELT-NETZ Customize-2025 V2.1 : 2025/05/24
+
+/* #CSS3 CUSTOMIZE 2025 V2.1 ***************************************************/
+/*==========  Mobile  ==========*/
+@media only screen and (max-width: 768px) {
+    .hide-0-736 {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+@media only screen and (min-width: 767px) {
+    .spNone-lage {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    a[href^="tel:"] {
+        pointer-events: none;
+    }
+}
+
+/*==========  Root  ==========*/
+:root {
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/*******************************************
+--- 1. FONT HOVER (Default)-----------------
+********************************************/
+a {
+    color: #353535;
+    font-family: "YakuHanJP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Yu Gothic UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif, Arial;
+    font-weight: 300, 400, 700, 900;
+    font-display: swap;
+}
+
+a:hover {
+    color: #cc0000;
+}
+
+/*******************************************
+--- 2. FONT FAMILY and FONT COMMON -----------------
+********************************************/
+body,
+h1,
+h2,
+h3,
+h4 {
+    font-family: "YakuHanJP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Yu Gothic UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif, Arial;
+    font-weight: 300, 400, 500, 700, 900;
+    font-display: swap;
+}
+
+p {
+    font-family: "YakuHanJP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Yu Gothic UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif, Arial;
+    font-size: 14px;
+    color: #313131;
+    font-weight: 300, 400, 500, 700, 900;
+    font-display: swap;
+}
+
+div {
+    font-family: "YakuHanJP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Yu Gothic UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif, Arial;
+    font-weight: 300, 400, 500, 700, 900;
+    font-display: swap;
+}
+
+ul {
+    font-family: "YakuHanJP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Yu Gothic UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif, Arial;
+    font-weight: 300, 400, 500, 700, 900;
+    font-display: swap;
+}
+
+li {
+    font-family: "YakuHanJP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Yu Gothic UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif, Arial;
+    font-weight: 300, 400, 500, 700, 900;
+    font-display: swap;
+}
+
+.font-poppins {
+    font-family: "Poppins", "YakuHanJP", "Noto Sans JP";
+    color: #333;
+    font-weight: 300, 400, 500, 700, 900;
+    font-display: swap;
+}
+
+.font-mincho {
+    font-family: "YakuHanJP", "Noto Serif JP", serif;
+    color: #333;
+    font-weight: 300, 400, 500, 700, 900;
+    font-display: swap;
+}
+
+.text-vertical-writing {
+    font-family: "Noto Serif JP", serif;
+    color: #333;
+    font-weight: 300, 400, 500, 700, 900;
+    writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    -webkit-writing-mode: vertical-rl;
+}
+
+/*******************************************
+--- 3. FONTS -------------------------------------------------------------
+********************************************/
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* #FONT WEIGHT ===============================*/
+.font-w-100 {
+    font-weight: 100 !important;
+}
+
+.font-w-200 {
+    font-weight: 200;
+}
+
+.font-w-300 {
+    font-weight: 300 !important;
+}
+
+.font-w-400 {
+    font-weight: 400;
+}
+
+.font-w-500 {
+    font-weight: 500 !important;
+}
+
+.font-w-600 {
+    font-weight: 600;
+}
+
+.font-w-700 {
+    font-weight: 700 !important;
+}
+
+.font-w-800 {
+    font-weight: 800;
+}
+
+.font-w-900 {
+    font-weight: 900 !important;
+}
+
+.font-bold {
+    font-weight: bold !important;
+}
+
+/* #FONT SIZE ================================*/
+.font-8 {
+    font-size: 8px;
+}
+
+.font-9 {
+    font-size: 9px;
+}
+
+.font-10 {
+    font-size: 10px;
+}
+
+.font-11 {
+    font-size: 11px;
+}
+
+.font-12 {
+    font-size: 12px;
+}
+
+.font-13 {
+    font-size: 13px;
+}
+
+.font-14 {
+    font-size: 14px;
+}
+
+.font-15 {
+    font-size: 15px;
+}
+
+.font-16 {
+    font-size: 16px;
+}
+
+.font-17 {
+    font-size: 17px;
+}
+
+.font-18 {
+    font-size: 18px;
+}
+
+.font-19 {
+    font-size: 19px;
+}
+
+.font-20 {
+    font-size: 20px;
+}
+
+.font-21 {
+    font-size: 21px;
+}
+
+.font-22 {
+    font-size: 22px;
+}
+
+.font-23 {
+    font-size: 23px;
+}
+
+.font-24 {
+    font-size: 24px;
+}
+
+.font-25 {
+    font-size: 25px;
+}
+
+.font-26 {
+    font-size: 26px;
+}
+
+.font-27 {
+    font-size: 27px;
+}
+
+.font-28 {
+    font-size: 28px;
+}
+
+.font-29 {
+    font-size: 29px;
+}
+
+.font-30 {
+    font-size: 30px;
+}
+
+.font-32 {
+    font-size: 32px;
+}
+
+.font-34 {
+    font-size: 34px;
+}
+
+.font-36 {
+    font-size: 36px;
+}
+
+.font-38 {
+    font-size: 38px;
+}
+
+.font-40 {
+    font-size: 40px;
+}
+
+.font-42 {
+    font-size: 42px;
+}
+
+.font-44 {
+    font-size: 44px;
+}
+
+.font-46 {
+    font-size: 46px;
+}
+
+.font-48 {
+    font-size: 48px;
+}
+
+.font-50 {
+    font-size: 50px;
+}
+
+.font-52 {
+    font-size: 52px;
+}
+
+.font-54 {
+    font-size: 54px;
+}
+
+.font-56 {
+    font-size: 56px;
+}
+
+.font-58 {
+    font-size: 58px;
+}
+
+.font-60 {
+    font-size: 60px;
+}
+
+.font-62 {
+    font-size: 62px;
+}
+
+.font-64 {
+    font-size: 64px;
+}
+
+.font-66 {
+    font-size: 66px;
+}
+
+.font-68 {
+    font-size: 68px;
+}
+
+.font-70 {
+    font-size: 70px;
+}
+
+.font-72 {
+    font-size: 72px;
+}
+
+.font-74 {
+    font-size: 74px;
+}
+
+.font-76 {
+    font-size: 76px;
+}
+
+.font-78 {
+    font-size: 78px;
+}
+
+.font-80 {
+    font-size: 80px;
+}
+
+/* #LINE HEIGHT ===========================*/
+.line-ht05 {
+    line-height: 0.5em;
+}
+
+.line-ht075 {
+    line-height: 0.75em;
+}
+
+.line-ht09 {
+    line-height: 0.9em;
+}
+
+.line-ht10 {
+    line-height: 1em;
+}
+
+.line-ht11 {
+    line-height: 1.1em;
+}
+
+.line-ht12 {
+    line-height: 1.2em;
+}
+
+.line-ht13 {
+    line-height: 1.3em;
+}
+
+.line-ht14 {
+    line-height: 1.4em;
+}
+
+.line-ht15 {
+    line-height: 1.5em;
+}
+
+.line-ht16 {
+    line-height: 1.6em;
+}
+
+.line-ht17 {
+    line-height: 1.7em;
+}
+
+.line-ht18 {
+    line-height: 1.8em;
+}
+
+.line-ht19 {
+    line-height: 1.9em;
+}
+
+.line-ht20 {
+    line-height: 2em;
+}
+
+/* #FONT #COLOR ===========================*/
+.font-black {
+    color: #000 !important;
+}
+
+.font-dark0１ {
+    color: #222222;
+}
+
+.font-dark02 {
+    color: #363636;
+}
+
+.font-dark03 {
+    color: #484848;
+}
+
+.font-white {
+    color: #fff !important;
+}
+
+.font-red {
+    color: #cc0000;
+}
+
+.font-blue {
+    color: #004386;
+}
+
+.font-yellow {
+    color: #ffe400;
+}
+
+.font-green {
+    color: #00591e;
+}
+
+.font-brown {
+    color: #4b413e;
+}
+
+/* #FONT-OPTION ===========================*/
+.heading-underline h1,
+.heading-underline h2,
+.heading-underline h3,
+.heading-underline h4,
+.heading-underline h5,
+.heading-underline h6 {
+    border-bottom: 2px solid #2c2b2b;
+    padding-bottom: 10px;
+}
+
+/*********************/
+.text-v-long11 {
+    -moz-transform: scale(1, 1.1);
+    /* Firefox */
+    -webkit-transform: scale(1, 1.1);
+    /* Chrome,Safari */
+    -o-transform: scale(1, 1.1);
+    /* Opera */
+    -ms-transform: scale(1, 1.1);
+    /* IE */
+    transform: scale(1, 1.1);
+    /* CSS3 */
+}
+
+.text-v-long12 {
+    -moz-transform: scale(1, 1.2);
+    -webkit-transform: scale(1, 1.2);
+    -o-transform: scale(1, 1.2);
+    -ms-transform: scale(1, 1.2);
+    transform: scale(1, 1.2);
+}
+
+.text-v-long13 {
+    -moz-transform: scale(1, 1.3);
+    -webkit-transform: scale(1, 1.3);
+    -o-transform: scale(1, 1.3);
+    -ms-transform: scale(1, 1.3);
+    transform: scale(1, 1.3);
+}
+
+.text-v-long14 {
+    -moz-transform: scale(1, 1.4);
+    -webkit-transform: scale(1, 1.4);
+    -o-transform: scale(1, 1.4);
+    -ms-transform: scale(1, 1.4);
+    transform: scale(1, 1.4);
+}
+
+.text-h-wide08 {
+    -moz-transform: scale(1, 0.8);
+    -webkit-transform: scale(1, 0.8);
+    -o-transform: scale(1, 0.8);
+    -ms-transform: scale(1, 0.8);
+    transform: scale(1, 0.8);
+}
+
+/*********************/
+.text-shadow-01 {
+    text-shadow: 1px 1px 1px #000;
+}
+
+.text-shadow-02 {
+    text-shadow: 2px 2px 3px #000;
+}
+
+.text-shadow-03 {
+    text-shadow: 2px 2px 5px #000;
+}
+
+.text-shadow-04 {
+    text-shadow: 3px 3px 5px #333;
+}
+
+.text-shadow-05 {
+    text-shadow: 3px 4px 5px #9c9c9c;
+}
+
+/*********************/
+span.text-underline-dark {
+    border-bottom: 1px solid #333;
+    padding-bottom: 2px;
+}
+
+span.text-underline-dark02 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 2px;
+}
+
+span.text-underline-red {
+    border-bottom: 1px solid #cc0000;
+    padding-bottom: 2px;
+}
+
+span.text-underline-red02 {
+    border-bottom: 2px solid #ff0000;
+    padding-bottom: 2px;
+}
+
+/*********************/
+.top-title-lettersp-01 {
+    letter-spacing: 0.1em;
+}
+
+.top-title-lettersp-02 {
+    letter-spacing: 0.2em;
+}
+
+.top-title-lettersp-03 {
+    letter-spacing: 0.3em;
+}
+
+.top-title-lettersp-04 {
+    letter-spacing: 0.4em;
+}
+
+/*********************/
+.title-fs-18 {
+    color: #3e4044;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.title-fs-20 {
+    color: #3e4044;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.title-fs-22 {
+    color: #3e4044;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.title-fs-24 {
+    color: #3e4044;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.title-fs-26 {
+    color: #3e4044;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.title-fs-28 {
+    color: #3e4044;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.title-fs-30 {
+    color: #3e4044;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.title-fs-32 {
+    color: #3e4044;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.title-fs-34 {
+    color: #3e4044;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-size: 34px;
+    font-weight: 500;
+}
+
+.title-fs-36 {
+    color: #3e4044;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.title-fs-38 {
+    color: #3e4044;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-size: 38px;
+    font-weight: 500;
+}
+
+.title-fs-40 {
+    color: #3e4044;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.title-fs-45 {
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-size: 45px;
+    font-weight: 900;
+}
+
+.title-fs-50 {
+    color: #3e4044;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-size: 56px;
+    font-weight: 900;
+}
+
+/* ******************************************
+ --- 4. ACCORDION-TOGGLE 
+******************************************* */
+/*******************************************
+--- 5. MY MODAL ----------------------------------------
+********************************************/
+.modal-l-body {
+    padding: 20px 15px 30px 40px;
+}
+
+/*---- Modal - Small ----*/
+.modal-s-body {
+    padding: 20px 10px 20px 20px;
+}
+
+/*---- Modal - Launch Demo Longsize ----*/
+.modal-body {
+    padding: 10px 5px 30px 0px;
+}
+
+.modal-body-02 {
+    padding: 10px 20px 30px 20px;
+}
+
+/*---- Modal - Common----*/
+.modal-dialog {
+    z-index: 1041;
+}
+
+.modal-header {
+    background: #2e343c;
+}
+
+.modal-footer {
+    background: #2e343c;
+    height: 70px;
+}
+
+.modal-short {
+    top: 8%;
+}
+
+.modal-footer-02 {
+    background: #2e343c;
+    height: 45px;
+}
+
+h4.modal-title {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.modal-header {
+    border-bottom: 0px;
+}
+
+.modal-footer {
+    border-top: 0px;
+}
+
+.modal-header .close {
+    margin-top: -3px;
+    padding-bottom: 6px;
+    padding-left: 0px;
+    font-size: 30px;
+    background: #fff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.modal-header .close:hover {
+    opacity: 0.3;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000000;
+}
+
+.modal-backdrop.fade {
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+
+.modal-backdrop.in {
+    filter: alpha(opacity=90);
+    opacity: .90;
+    background-image: url(../images/overlay.png);
+}
+
+/*******************************************
+--- 6. BUTTONS (EXTRA HORIZONTAL ) ---------------
+********************************************/
+/* Reset */
+.btn-ext-fill-horz:before,
+.btn-ext-fill-horz:after {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn-ext-fill-horz {
+    background-color: rgb(255, 255, 255);
+    border: 3px solid #343434;
+    color: #343434;
+    overflow: hidden;
+}
+
+.btn-ext-fill-horz:before,
+.btn-ext-fill-horz:after {
+    content: '';
+    width: 0;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.btn-ext-fill-horz:before {
+    left: 50%;
+}
+
+.btn-ext-fill-horz:after {
+    right: 50%;
+}
+
+.btn-ext-fill-horz:hover {
+    color: #fff;
+}
+
+.btn-ext-fill-horz:hover:before,
+.btn-ext-fill-horz:hover:after {
+    width: 50%;
+    opacity: 1;
+}
+
+/*-- *************** HORIZONTAL Equal width ******************** --*/
+.btn-ext-equal-width {
+    display: inline-block;
+    width: 190px;
+    line-height: 30px;
+    margin: 8px;
+    padding: 6px 20px;
+    font-size: 13px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    opacity: .999;
+    border-radius: 3px;
+    font-family: "YakuHanJP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Yu Gothic UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif, Arial;
+    font-weight: 300, 400, 500, 700, 900;
+    z-index: 11;
+}
+
+/* -----------------------------------------------*/
+.btn-ext-equal-width.btn-ext-darkgreen {
+    border-color: #05a648;
+}
+
+.btn-ext-fill-horz.btn-ext-darkgreen:before,
+.btn-ext-fill-horz.btn-ext-darkgreen:after {
+    background-color: #05a648;
+}
+
+@media only screen and (max-width: 768px) {
+    .btn-ext-equal-width.btn-ext-darkgreen {
+        width: 280px;
+        margin: 2px;
+        padding: 6px 10px;
+    }
+}
+
+/* -----------------------------------------------*/
+.btn-ext-equal-width.btn-ext-darkorange {
+    border-color: #ff370b;
+}
+
+.btn-ext-fill-horz.btn-ext-darkorange:before,
+.btn-ext-fill-horz.btn-ext-darkorange:after {
+    background-color: #ff370b;
+}
+
+@media only screen and (max-width: 768px) {
+    .btn-ext-equal-width.btn-ext-darkorange {
+        width: 280px;
+        margin: 2px;
+        padding: 6px 10px;
+    }
+}
+
+/* -----------------------------------------------*/
+.btn-ext-equal-width.btn-ext-darkblue {
+    border-color: #006ab0;
+}
+
+.btn-ext-fill-horz.btn-ext-darkblue:before,
+.btn-ext-fill-horz.btn-ext-darkblue:after {
+    background-color: #006ab0;
+}
+
+@media only screen and (max-width: 768px) {
+    .btn-ext-equal-width.btn-ext-darkblue {
+        width: 280px;
+        margin: 2px;
+        padding: 6px 10px;
+    }
+}
+
+/* -----------------------------------------------*/
+.btn-ext-equal-width.btn-ext-darkgray {
+    border-color: #595959;
+}
+
+.btn-ext-fill-horz.btn-ext-darkgray:before,
+.btn-ext-fill-horz.btn-ext-darkgray:after {
+    background-color: #595959;
+}
+
+@media only screen and (max-width: 768px) {
+    .btn-ext-equal-width.btn-ext-darkgray {
+        width: 280px;
+        margin: 2px;
+        padding: 6px 10px;
+    }
+}
+
+/* -----------------------------------------------*/
+.btn-ext-equal-width.btn-ext-darkteal {
+    border-color: #438d89;
+}
+
+.btn-ext-fill-horz.btn-ext-darkteal:before,
+.btn-ext-fill-horz.btn-ext-darkteal:after {
+    background-color: #438d89;
+}
+
+@media only screen and (max-width: 768px) {
+    .btn-ext-equal-width.btn-ext-darkteal {
+        width: 240px;
+        margin: 2px;
+        padding: 6px 10px;
+    }
+}
+
+/* -----------------------------------------------*/
+.btn-ext-equal-width.btn-ext-darkpurple {
+    border-color: #483a6a;
+}
+
+.btn-ext-fill-horz.btn-ext-darkpurple:before,
+.btn-ext-fill-horz.btn-ext-darkpurple:after {
+    background-color: #483a6a;
+}
+
+@media only screen and (max-width: 768px) {
+    .btn-ext-equal-width.btn-ext-darkpurple {
+        width: 280px;
+        margin: 2px;
+        padding: 6px 10px;
+    }
+}
+
+/* -----------------------------------------------*/
+/*
+/*
+/*
+/* -------------- モバイルボタン  ----------------------------------*/
+.button.button-mobile,
+.button-mobile-01 {
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    width: 300px;
+    padding: 15px 20px 15px 20px;
+    background-color: #cc0000;
+    color: #fff;
+    font-size: 15px;
+    border: 1px solid #cc0000;
+    border-radius: 4px;
+    transition: all .4s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+    -o-transition: all .4s ease 0s;
+}
+
+.button.button-mobile:hover,
+.button-mobile-01:hover {
+    background-color: #830000;
+    border: 1px solid #830000;
+    color: #fff;
+}
+
+.button.button-mobile-02,
+.button-mobile-02 {
+    padding: 15px 20px 15px 20px;
+    background-color: #074059;
+    color: #fff;
+    font-size: 15px;
+    border: 1px solid #074059;
+}
+
+.button.button-mobile-02:hover,
+.button-mobile-02:hover {
+    background-color: #006996;
+    border: 1px solid #006996;
+    color: #fff;
+}
+
+.button.button-mobile-03,
+.button-mobile-03 {
+    padding: 15px 20px 15px 20px;
+    background-color: #037982;
+    color: #fff;
+    font-size: 15px;
+    border: 1px solid #037982;
+}
+
+.button.button-mobile-03:hover,
+.button-mobile-03:hover {
+    background-color: #094246;
+    border: 1px solid #094246;
+    color: #fff;
+}
+
+.button.button-mobile-04,
+.button-mobile-04 {
+    padding: 15px 20px 15px 20px;
+    background-color: #fff;
+    color: #000;
+    font-size: 15px;
+    border: 3px solid #ff370b;
+}
+
+.button.button-mobile-04:hover,
+.button-mobile-04:hover {
+    background-color: #ff370b;
+    border: 3px solid #ff370b;
+    color: #fff;
+}
+
+/*
+/*
+/*****	#BUTTONS *****/
+button {
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    -webkit-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
+}
+
+.button {
+    background-color: #ffea00;
+    color: #4b4e53;
+    border: none;
+    border-radius: 2px;
+    -webkit-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
+    /****	add in anim	*******/
+    outline: none;
+    position: relative;
+}
+
+.button:hover {
+    background-color: #4b4e53;
+    color: #fff;
+    -webkit-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
+}
+
+.button.small {
+    font-size: 12px;
+    line-height: 14px;
+    padding: 9px 16px 8px 16px;
+    display: inline-block;
+}
+
+.button.small-border {
+    font-size: 12px;
+    line-height: 14px;
+    padding: 8px 16px;
+    display: inline-block;
+    border-bottom: 1px solid #FFFFFF !important;
+    border-right: 1px solid #FFFFFF !important;
+    -webkit-box-shadow: 2px 2px 0 rgba(0, 0, 0, .1) !important;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, .1) !important;
+}
+
+/*****  #BUTTONS COLORS  *****/
+.button.small.yellow {
+    background-color: #ffea00;
+    color: #4b4e53;
+}
+
+.button.small.yellow:hover {
+    background-color: #61656b;
+    color: #fff;
+}
+
+.button.yellow {
+    background-color: #ffea00;
+    color: #4b4e53;
+}
+
+.button.yellow:hover {
+    background-color: #4b4e53;
+    color: #fff;
+}
+
+.button.red {
+    color: #fff;
+    background-color: #cc0000;
+}
+
+.button.red:hover {
+    background-color: #61656b;
+    cursor: pointer;
+}
+
+.button.brown {
+    color: #fff;
+    background-color: #302b2b;
+}
+
+.button.brown:hover {
+    background-color: #625554;
+    cursor: pointer;
+}
+
+/*****	#HOVER THIN BUTTONS		*****/
+.button.hover-thin {
+    border: 2px solid #ffea00;
+    color: #4b4e53;
+    -webkit-transition: all .5s ease 0s;
+    -o-transition: all .5s ease 0s;
+    transition: all .5s ease 0s;
+    margin-bottom: 50px;
+}
+
+.button.hover-thin:hover {
+    background: none;
+    border: 2px solid #dfdfdf;
+    color: #4b4e53;
+}
+
+/**********/
+.button.medium.hover-thin {
+    padding: 14px 8px;
+}
+
+/**********/
+.button.medium.hover-thin.red {
+    background: #cc0000;
+    border-color: #cc0000;
+    color: #fff;
+}
+
+.button.medium.hover-thin.red:hover {
+    background: #ffffff;
+    border: 2px solid #cc0000;
+    color: #cc0000;
+}
+
+.button.medium.hover-thin.blue {
+    background: #0074c1;
+    border-color: #0074c1;
+    color: #fff;
+}
+
+.button.medium.hover-thin.blue:hover {
+    background: none;
+    border: 2px solid #0074c1;
+    color: #0074c1;
+}
+
+.button.medium.hover-thin.green {
+    background: #007e28;
+    border-color: #007e28;
+    color: #fff;
+}
+
+.button.medium.hover-thin.green:hover {
+    background: none;
+    border: 2px solid #007e28;
+    color: #007e28;
+}
+
+.button.medium.hover-thin.deeporange {
+    background: #dc3300;
+    border-color: #dc3300;
+    color: #fff;
+}
+
+.button.medium.hover-thin.deeporange:hover {
+    background: none;
+    border: 2px solid #ff5722;
+    color: #ff5722;
+}
+
+/**********/
+.button.small.hover-thin {
+    padding: 12px 5px 11px 5px;
+    border-radius: 4px;
+}
+
+/*****	#HOVER THIN BUTTONS COLORS *****/
+.button.yellow.hover-thin {
+    border-color: #ffea00;
+    color: #484848;
+}
+
+.button.yellow.hover-thin:hover {
+    background: none;
+    border: 2px solid #ffea00;
+    color: #484848;
+}
+
+/****************************************
+--- 7. SECTION-BACK GROUND COLOR and IMAGE ----
+*****************************************/
+.section-bg-white {
+    background: #fff;
+}
+
+.section-bg-02 {
+    background: #f8f8f8;
+}
+
+.section-bg-03 {
+    background: #f6f6f6;
+}
+
+.section-bg-04 {
+    background: #f4f4f4;
+}
+
+.section-bg-05 {
+    background: #f2f2f2;
+}
+
+.section-bg-06 {
+    background: #e9e9e9;
+}
+
+.section-bg-07 {
+    background: #e6e6e6;
+}
+
+.section-bg-gradient-01 {
+    background: rgb(229, 177, 255);
+    background: linear-gradient(307deg, rgba(229, 177, 255, 0.60553867543111) 0%, rgba(253, 225, 255, 0.3926535213694853) 18%,
+            rgba(236, 209, 255, 0.347835594198617) 48%, rgba(255, 255, 255, 1) 55%, rgba(253, 215, 255, 0.44867593033307074) 69%,
+            rgba(254, 240, 255, 1) 78%, rgba(255, 255, 255, 0.286210944338673) 87%, rgba(229, 176, 255, 0.6111409163274685) 100%);
+}
+
+.section-bg-gradient-02 {
+    background: rgb(255, 151, 40);
+    background: linear-gradient(145deg, rgba(255, 151, 40, 1) 0%, rgba(255, 216, 175, 1) 25%, rgba(255, 240, 224, 1) 48%,
+            rgba(255, 216, 175, 1) 75%, rgba(255, 151, 40, 1) 100%);
+}
+
+/*--- SECTION-BG IMG--------------------------------*/
+.section-bg-top-img {
+    margin-bottom: 0px;
+    background-image: url(../images/static-media/top-img.webp);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 700px;
+}
+
+@media only screen and (max-width: 768px) {
+    .section-bg-top-img {
+        background-image: url(../images/static-media/top-bg-mobile-03.webp);
+        height: 478px;
+        background-repeat: no-repeat;
+        background-position: top center;
+    }
+}
+
+/******* ----------------------***************/
+@media only screen and (max-width: 768px) {
+    .section-bg-10-img {
+        background-image: url(../images/static-media/bg-mobile-10.webp);
+        background-color: #05a648;
+        height: 1200px;
+        background-repeat: no-repeat;
+        background-position: top center;
+    }
+}
+
+/*
+/*
+/*
+/************************************
+--- 8. LAZYLOADED ----------------------------
+*************************************/
+.sample-8.bg-lazyloaded {
+    will-change: background-position;
+    margin: 0;
+    padding: 0;
+    background: url(../images/static-media/img-26.webp) fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 700px;
+}
+
+@media only screen and (max-width: 768px) {
+    .sample-8.bg-lazyloaded {
+        will-change: background-position;
+        background: url(../images/static-media/bg-mobile-01.webp) fixed;
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        height: 580px;
+    }
+}
+
+/************************************
+--- 9. TP BANNER TIMER （RV-SLIDER-TIMER）-
+*************************************/
+.tp-bannertimer {
+    width: 100%;
+    height: 3px;
+    /*--線の太さを調整--*/
+    background: none;
+    position: absolute;
+    z-index: 5000;
+    top: 0px
+}
+
+.tp-bannertimer.tp-bottom {
+    bottom: 0px;
+    height: 5px;
+    top: auto
+}
+
+.opacity-rv {
+    background: none;
+    background-position: left center;
+    z-index: 2;
+}
+
+/********************************************
+--- 10. SCROLL-DOWN and #BACK TO TOP BUTTON ---
+********************************************/
+#back-top {
+    position: fixed;
+    bottom: 16px;
+    right: 13px;
+    padding: 0;
+    margin: 0;
+    z-index: 20;
+}
+
+#back-top a {
+    text-decoration: none;
+    display: block;
+    color: rgb(13, 107, 141);
+    font-size: 42px;
+    z-index: 999;
+}
+
+#back-top a:hover {
+    color: rgb(13, 71, 92)
+}
+
+.scroll-down-01 {
+    display: block;
+    color: #fff;
+    width: 200px;
+    height: 40px;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    margin-left: -100px;
+    text-align: center;
+    z-index: 20;
+    -webkit-animation: scroll-down-anim ease-in-out 2.2s infinite;
+    -moz-animation: scroll-down-anim ease-in-out 2.2s infinite;
+    -o-animation: scroll-down-anim ease-in-out 2.2s infinite;
+    animation: scroll-down-anim ease-in-out 2.2s infinite;
+}
+
+.scroll-down-01::after {
+    color: #cc0000;
+}
+
+.scroll-down-02 {
+    color: #1da1de;
+    font-size: 50px;
+}
+
+.scroll-down-02::after {
+    color: #cc0000;
+}
+
+.scroll-down-03 {
+    color: #333;
+    font-size: 40px;
+}
+
+.scroll-down-03:after {
+    color: #cc0000;
+}
+
+.scroll-icon-prev {
+    font-size: 16px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.scroll-icon-next {
+    font-size: 16px;
+    display: inline-block;
+}
+
+/************************************
+--- 11. HR ----------------------------------------
+*************************************/
+hr {
+    border-top: 1px solid #b1b1b1;
+    margin: 10px 0px 10px 0px;
+}
+
+.hr-01 {
+    border-top: 2px solid #505050;
+    margin: 0px 0px 10px 0px;
+}
+
+.hr-02 {
+    border-top: 1px solid #c5a64b;
+    margin: 0px 0px 0px 0px;
+}
+
+.hr-10 {
+    border-top: 5px solid #b7159c;
+    margin: -8px 0px 4px 0px;
+}
+
+.hr-11 {
+    border-top: 5px solid #09629d;
+    margin: -8px 0px 4px 0px;
+}
+
+.hr-12 {
+    border-top: 5px solid #088012;
+    margin: -8px 0px 4px 0px;
+}
+
+.hr-13 {
+    border-top: 5px solid #d46611;
+    margin: -8px 0px 4px 0px;
+}
+
+.hr-14 {
+    border-top: 1px dashed #d46611;
+    margin: 7px 0px 7px 0px;
+}
+
+.outdoor-line {
+    border-top: 7px solid #adc5fe;
+    margin: 0px;
+    width: 100%;
+}
+
+.care-line {
+    border-top: 7px solid #f4b9f5;
+    margin: 0px;
+    width: 65%;
+}
+
+hr.gradient {
+    background-image: -webkit-linear-gradient(left, transparent, rgba(0, 0, 0, .4), transparent);
+    background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(rgba(0, 0, 0, .4)), to(transparent));
+    background-image: -o-linear-gradient(left, transparent, rgba(0, 0, 0, .4), transparent);
+    background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, .4), transparent);
+    border: 0;
+    height: 1px;
+    margin: 22px 0 22px 0;
+}
+
+hr.gradient-green {
+    background-image: -webkit-linear-gradient(left, transparent, rgba(2, 111, 53, 0.6), transparent);
+    background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(rgba(2, 111, 53, 0.6)), to(transparent));
+    background-image: -o-linear-gradient(left, transparent, rgba(2, 111, 53, 0.6), transparent);
+    background-image: linear-gradient(to right, transparent, rgba(2, 111, 53, 0.6), transparent);
+    border: 0;
+    height: 2px;
+    margin: 22px 0 22px 0;
+}
+
+/************************************
+--- 12.  IMAGE BOX BORDER --------------------
+*************************************/
+.image-border-dark {
+    border: 1px solid #656666;
+    padding: 10px;
+    background: #fff;
+}
+
+.image-border-dark02 {
+    border: 1px solid #2f2e2e;
+}
+
+.box-border-01 {
+    padding: 0.8em 1.5em;
+    margin: 2em 0;
+    border: solid 3px #b5b5b5;
+}
+
+.box-border-01 p {
+    margin: 0;
+    padding: 0;
+}
+
+/* ***********************************
+--- 13. IMG EXTRA and PHOTO GRAY -----------------------
+*********************************** */
+.img-extra03 {
+    position: absolute;
+    top: 50px;
+    right: -26px;
+    z-index: 14;
+}
+
+@media only screen and (max-width: 768px) {
+    .img-extra03 {
+        display: none;
+    }
+}
+
+.img-extra04 {
+    position: absolute;
+    top: 35px;
+    left: -26px;
+    z-index: 15;
+}
+
+@media only screen and (max-width: 768px) {
+    .img-extra04 {
+        top: 10px;
+        left: 45px;
+    }
+}
+
+.img-extra05 {
+    position: absolute;
+    top: 100px;
+    right: 190px;
+    z-index: 7;
+}
+
+@media only screen and (max-width: 768px) {
+    .img-extra05 {
+        display: none;
+    }
+}
+
+.img-extra06 {
+    position: absolute;
+    top: 100px;
+    right: 120px;
+    z-index: 8;
+}
+
+@media only screen and (max-width: 768px) {
+    .img-extra06 {
+        display: none;
+    }
+}
+
+.img-extra07 {
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    z-index: 9;
+}
+
+@media only screen and (max-width: 768px) {
+    .img-extra07 {
+        display: none;
+    }
+}
+
+.img-extra08 {
+    position: absolute;
+    top: 100px;
+    right: -20px;
+    z-index: 10;
+}
+
+@media only screen and (max-width: 768px) {
+    .img-extra08 {
+        display: none;
+    }
+}
+
+/* --- */
+img.photo-gray {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+img.photo-gray:hover {
+    -webkit-filter: grayscale(0);
+    -moz-filter: grayscale(0);
+    -ms-filter: grayscale(0);
+    -o-filter: grayscale(0);
+    filter: grayscale(0);
+    -webkit-transition: all .5s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    -o-transition: all .5s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    transition: all .5s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+}
+
+.gradient-animation {
+    display: inline-block;
+    background: linear-gradient(45deg, #149f86 16%, #bb10f4 57%, #058acd 90%);
+    background: -webkit-linear-gradient(45deg, #149f86 16%, #bb10f4 57%, #058acd 90%);
+    background-size: 300% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientEffect 3.2s infinite alternate;
+}
+
+.gradient-animation-02 {
+    display: inline-block;
+    background: linear-gradient(45deg, #d033d2 16%, #f6b80e 57%, #1ec327 90%);
+    background: -webkit-linear-gradient(45deg, #d033d2 16%, #f6b80e 57%, #1ec327 90%);
+    background-size: 300% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientEffect 3.2s infinite alternate;
+}
+
+@keyframes gradientEffect {
+    from {
+        background-position: left
+    }
+
+    to {
+        background-position: right
+    }
+}
+
+/* ***********************************
+--- 14. TOOL TIPS -----------------------
+*********************************** */
+.tooltip {
+    position: absolute;
+    z-index: 5070;
+    display: block;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.4;
+    filter: alpha(opacity=0);
+    opacity: 0
+}
+
+.tooltip.in {
+    filter: alpha(opacity=90);
+    opacity: .9
+}
+
+.tooltip.top {
+    padding: 5px 0;
+    margin-top: -3px
+}
+
+.tooltip.bottom {
+    padding: 5px 0;
+    margin-top: 3px
+}
+
+.tooltip-inner {
+    max-width: 200px;
+    padding: 12px 18px;
+    color: #fff;
+    text-align: left;
+    text-decoration: none;
+    background-color: #000;
+    border-radius: 4px;
+    text-align: justify;
+    text-justify: inter-ideograph
+}
+
+.tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid
+}
+
+.tooltip.top .tooltip-arrow {
+    bottom: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 6px 6px 0;
+    border-top-color: #000
+}
+
+.tooltip.bottom .tooltip-arrow {
+    top: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 0 5px 5px;
+    border-bottom-color: #000
+}
+
+/* ***********************************
+--- 15. INFO PANEL -----------------------
+*********************************** */
+.info-panel {
+    margin: 0 0;
+    padding: 30px;
+    background: rgba(242, 245, 248, 0.7);
+    border: 12px solid rgba(223, 223, 223, 0.67);
+}
+
+.info-panel-02 {
+    padding: 30px;
+    background: rgba(256, 256, 256, .77);
+    border: 3px solid #e1e1e1;
+}
+
+.info-panel-03 {
+    padding: 30px;
+    background: rgba(11, 11, 11, .59);
+    border: 12px solid rgba(250, 246, 246, .2)
+}
+
+/* ***********************************
+--- 16. BOX-SIMPLE -----------------------
+*********************************** */
+.box0 {
+    padding: 1em 1em;
+    margin-top: 50px;
+    background: #f8f8f8;
+    border-top: dashed 1px #6091d3;
+    border-bottom: dashed 1px #6091d3;
+}
+
+.box1 {
+    padding: 1em 1em;
+    margin: 2em 0;
+    border: solid 3px #000000;
+}
+
+.box1 p {
+    margin: 0;
+    padding: 0;
+}
+
+/*************/
+.box2 {
+    padding: 1em 1em;
+    margin: 2em 0;
+    color: #6091d3;
+    background: #FFF;
+    border: solid 3px #6091d3;
+    border-radius: 10px;
+}
+
+.box2 p {
+    margin: 0;
+    padding: 0;
+}
+
+/*************/
+.box10 {
+    padding: 1em 1.5em;
+    margin: 2em 0;
+    border: dashed 1px #000000;
+}
+
+.box10 p {
+    margin: 0;
+    padding: 0;
+}
+
+/************ BOX-TITLE **********/
+.box26 {
+    position: relative;
+    margin: 2em 0;
+    padding: 1em 1em;
+    border: solid 3px #49a7ff;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.box26 .box-title {
+    position: absolute;
+    display: inline-block;
+    top: -11px;
+    left: 23px;
+    padding: 0 9px;
+    line-height: 1;
+    font-size: 19px;
+    background: #fff;
+    color: #2c5882;
+    font-weight: bold;
+}
+
+.box26 p {
+    margin-top: 10px;
+    padding: 7px 7px;
+}
+
+/*************/
+/* ***********************************
+--- 17. FEATURES 2-3 #NEW -----------------------
+*********************************** */
+/* ***********************************
+--- 18. モーダルガタツキ防止 -----------------------
+*********************************** */
+html {
+    overflow-y: scroll;
+}
+
+.modal-open {
+    padding-right: 0px !important;
+}
+
+/*--***********************************
+--- 19. FOOTER 2 WHITE #NEW -------------------
+************************************ */
+.a-text-cont a:hover {
+    color: #cc0000;
+}
+
+.footer-copy02 {
+    font-size: 13px;
+    font-weight: 300;
+    color: #000;
+}
+
+/*--***********************************
+--- 20. FONT JP-YAKU -------------------
+************************************ */
+@font-face {
+    font-family: "YakuHanJP";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/YakuHanJP-Regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "YakuHanJP";
+    font-style: normal;
+    font-weight: bold;
+    src: url("../fonts/YakuHanJP-Bold.woff2") format("woff2");
+}
+
+/*******************************************
+--- 21. TITLE-FONT-CONT -----------------
+********************************************/
+@media only screen and (max-width: 768px) {
+    .title-cont-09 {
+        font-size: 9px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-10 {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-11 {
+        font-size: 11px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-12 {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-13 {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-14 {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-15 {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-16 {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-17 {
+        font-size: 17px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-18 {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-19 {
+        font-size: 19px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-20 {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-21 {
+        font-size: 21px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-22 {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-23 {
+        font-size: 23px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-24 {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-26 {
+        font-size: 26px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-28 {
+        font-size: 28px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-30 {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-32 {
+        font-size: 32px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-34 {
+        font-size: 34px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-36 {
+        font-size: 36px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-38 {
+        font-size: 38px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-40 {
+        font-size: 40px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-42 {
+        font-size: 42px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-44 {
+        font-size: 44px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-46 {
+        font-size: 46px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-48 {
+        font-size: 48px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .title-cont-50 {
+        font-size: 50px;
+    }
+}
+
+/*--********************************
+--- 23. ROW PADDING 調整 ---------------------
+********************************* */
+.row-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.row-0 > div {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.row-06 {
+    margin-left: -3px;
+    margin-right: -3px;
+}
+
+.row-06 > div {
+    padding-right: 3px;
+    padding-left: 3px;
+}
+
+.row-10 {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.row-10 > div {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.row-16 {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.row-16 > div {
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+.row-20 {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.row-20 > div {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.row-30 {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.row-30 > div {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.row-40 {
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.row-40 > div {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.row-50 {
+    margin-left: -25px;
+    margin-right: -25px;
+}
+
+.row-50 > div {
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+/* ***********************************
+--- 24. USER CUSTOM -----------------------
+*********************************** */
+.center {
+    margin: 0 auto;
+    max-width: 960px;
+    width: 100%;
+}
+
+.right-1024 {
+    float: right;
+}
+
+@media only screen and (max-width: 768px) {
+    .right-1024 {
+        float: left;
+    }
+}
+
+.mark2,
+mark2 {
+    background: linear-gradient(transparent 65%, #fcdbdb 35%, #fcdbdb 100%);
+}
+
+.vertical-m {
+    vertical-align: middle;
+}
+
+.comment-text-jf {
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
+
+.icon-bg-02-02 {
+    background: #1a3944;
+    width: 75px;
+    height: 75px;
+    border: 3px solid #1a3944;
+    border-radius: 50%;
+    margin-left: 15px;
+}
+
+.img-rounded {
+    border-radius: 8px;
+}
+
+.img-rounded-02 {
+    border-radius: 14px;
+}
+
+.section-main-number {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.jp-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.border-line-w {
+    padding: 0.1em 0;
+    border-top: solid 3px #4e4e4e;
+    border-bottom: solid 3px #4e4e4e;
+}
+
+@media only screen and (max-width: 768px) {
+    .border-line-w {
+        padding: 0 0;
+        border-top: 0px;
+        border-bottom: 0px;
+    }
+}
+
+.label-bg-green {
+    background-color: #175e11;
+    color: #fff;
+    border-radius: 4px;
+    padding: 3px 15px;
+    font-size: 12px;
+}
+
+.label-bg-green:hover {
+    background-color: #11a403;
+    color: #fff;
+}
+
+.box-shadow {
+    box-shadow: 3px 3px 5px 5px rgba(182, 182, 182, 0.18);
+}
+
+.post-prev-img-overlay:hover {
+    opacity: .33;
+    -webkit-transition: all .3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    -o-transition: all .3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    transition: all .3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+}
+
+/*--********************************
+--- 25. MARGIN PADDING 追加 ---------------------
+********************************* */
+.mt-135 {
+    margin-top: 135px;
+}
+
+.mt-435 {
+    margin-top: 435px;
+}
+
+.ml-min-150 {
+    margin-left: -150px;
+}
+
+.mt-690 {
+    margin-top: 690px;
+}
+
+.ml-min-230 {
+    margin-left: -230px;
+}
+
+.ml-min-280 {
+    margin-left: -280px;
+}
+
+.ml-min-440 {
+    margin-left: -440px;
+}
+
+.ml-220 {
+    margin-left: 220px;
+}
+
+.ml-400 {
+    margin-left: 400px;
+}
+
+.ml-420 {
+    margin-left: 420px;
+}
+
+.mr-210 {
+    margin-right: 210px;
+}
+
+.pl-min-10 {
+    padding-left: -10px;
+}
+
+.pl-2 {
+    padding-left: 2px;
+}
+
+/*

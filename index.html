@@ -378,8 +378,9 @@ img{max-width:100%;display:block}
   .menu-footer{padding-top:18px}
 }
 @media (max-width:560px) and (max-height:960px){
-  .menu-drawer .menu-nav a{padding:12px 0}
-  .menu-drawer .menu-nav a.menu-used{padding:11px 0}
+  aside.menu-drawer{padding-top:68px}
+  .menu-drawer .menu-nav a{padding:10px 0}
+  .menu-drawer .menu-nav a.menu-used{padding:8px 0}
 }
 @media (max-width:560px){
   .menu-drawer{padding:78px 28px 32px}
@@ -494,6 +495,65 @@ img{max-width:100%;display:block}
   .gate-foot-inner .hours{gap:14px;font-size:12.5px;justify-content:center}
   .gate-foot-inner .sep{display:none}
 }
+
+/* ============================
+   랩폰써니 — 세 번째 게이트
+   ============================ */
+.gate-half.wrappon .photo{background-image:url('wrappon/images/gate-sunny.jpg');filter:brightness(.6) saturate(.95)}
+.gate-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+@media (prefers-reduced-motion:reduce){.gate-video{display:none}}
+
+/* PV5 · 카니발 — 사진이 천천히 확대·이동하며 넘어가는 효과 (4장 × 6초) */
+.photo .kb{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  opacity:0;will-change:opacity,transform;
+  animation:kbFade 24s linear infinite,kbMove 24s linear infinite;
+}
+.photo .kb:nth-child(2){animation-delay:6s}
+.photo .kb:nth-child(3){animation-delay:12s}
+.photo .kb:nth-child(4){animation-delay:18s}
+.gate-half.carnival .photo .kb:nth-child(1){animation-delay:3s}
+.gate-half.carnival .photo .kb:nth-child(2){animation-delay:9s}
+.gate-half.carnival .photo .kb:nth-child(3){animation-delay:15s}
+.gate-half.carnival .photo .kb:nth-child(4){animation-delay:21s}
+.photo .kb:nth-child(1){--kx:-2%;--ky:-1%}
+.photo .kb:nth-child(2){--kx:2.5%;--ky:0%}
+.photo .kb:nth-child(3){--kx:-3%;--ky:1%}
+.photo .kb:nth-child(4){--kx:2%;--ky:-1.5%}
+@keyframes kbFade{0%{opacity:0}6%{opacity:1}25%{opacity:1}31%{opacity:0}100%{opacity:0}}
+@keyframes kbMove{
+  0%{transform:scale(1.03) translate3d(0,0,0)}
+  31%,100%{transform:scale(1.14) translate3d(var(--kx),var(--ky),0)}
+}
+.gate-half.pv5 .kb:nth-child(1){background-image:url('pv5/images/pv5-main.jpg')}
+.gate-half.pv5 .kb:nth-child(2){background-image:url('pv5/images/beige-navy-seat-side.jpg')}
+.gate-half.pv5 .kb:nth-child(3){background-image:url('pv5/images/popup-roof-outer.jpg');background-position:42% center}
+.gate-half.pv5 .kb:nth-child(4){background-image:url('pv5-dining/images/rear_outdoor.jpg')}
+.gate-half.carnival .kb:nth-child(1){background-image:url('carnival/images/carnival-main.jpg')}
+.gate-half.carnival .kb:nth-child(2){background-image:url('carnival/images/gate-exterior.jpg');background-position:44% center}
+.gate-half.carnival .kb:nth-child(3){background-image:url('carnival/images/gate-mood.jpg')}
+.gate-half.carnival .kb:nth-child(4){background-image:url('carnival/images/gate-seats.jpg')}
+@media (prefers-reduced-motion:reduce){.photo .kb{display:none}}
+.gate-half.wrappon:hover .photo{filter:brightness(.75) saturate(1)}
+.gate-tagline,.gate-price{word-break:keep-all}
+.gate-price{flex-wrap:wrap;row-gap:4px}
+.gate-half.wrappon::after{background:linear-gradient(180deg,transparent 60%,rgba(61,176,168,.22) 100%)}
+.gate-half.wrappon .gate-eyebrow::before{background:#7FD8CF}
+.gate-half.wrappon .gate-title em{color:#8FE0D6}
+.gate-half.wrappon{animation-delay:.49s}
+.gate-half ~ .gate-half{border-left:1px solid rgba(255,255,255,.12)}
+@media (min-width:901px){
+  .gate-half-inner{padding:0 3.6vw 8vh}
+  .gate-title{font-size:clamp(44px,4.6vw,88px)}
+  .gate-tagline{max-width:330px}
+  .gate:hover .gate-half:not(:hover){flex:.7}
+  .gate-half:hover{flex:1.6}
+}
+@media (max-width:900px){
+  .gate-half ~ .gate-half{border-left:0;border-top:1px solid rgba(255,255,255,.12)}
+  .gate-half.wrappon{padding-bottom:120px}
+}
 </style>
 </head>
 
@@ -539,6 +599,10 @@ img{max-width:100%;display:block}
       <span class="label"><small>USED CARS · 중고차</small><span>중고차 <em>판매</em></span></span>
       <span class="arrow">→</span>
     </a>
+    <a href="wrappon/" class="menu-used menu-wrappon">
+      <span class="label"><small>WRAPPON · 캠핑 화장실</small><span>랩폰<em>써니</em><span class="new">NEW</span></span></span>
+      <span class="arrow">→</span>
+    </a>
   </nav>
   <div class="menu-footer">
     <a href="tel:1877-8262" class="tel">📞 1877-8262</a>
@@ -553,7 +617,7 @@ img{max-width:100%;display:block}
 <!-- TWO-HALF GATE -->
 <main class="gate">
   <a class="gate-half pv5" href="pv5/" aria-label="PV5 리무진 페이지로 이동">
-    <div class="photo"></div>
+    <div class="photo" aria-hidden="true"><span class="kb"></span><span class="kb"></span><span class="kb"></span><span class="kb"></span></div>
     <div class="gate-half-inner">
       <span class="gate-eyebrow">PV5 · <span class="new-tag">NEW</span></span>
       <h2 class="gate-title">PV5<em>FCP리무진</em></h2>
@@ -563,16 +627,25 @@ img{max-width:100%;display:block}
     </div>
   </a>
 
-  <div class="gate-divider"></div>
-
   <a class="gate-half carnival" href="carnival/" aria-label="카니발 특장 페이지로 이동">
-    <div class="photo"></div>
+    <div class="photo" aria-hidden="true"><span class="kb"></span><span class="kb"></span><span class="kb"></span><span class="kb"></span></div>
     <div class="gate-half-inner">
       <span class="gate-eyebrow">CARNIVAL · SIGNATURE</span>
       <h2 class="gate-title">Carnival<em>FCP리무진</em></h2>
       <p class="gate-tagline">기아 카니발 기반 <strong>1,100 패키지 · 1,500 패키지 · 하이리무진</strong>.</p>
       <div class="gate-price">1,100 패키지 · 1,500 패키지 · 하이리무진</div>
       <span class="gate-enter">Enter Carnival <span class="arrow">→</span></span>
+    </div>
+  </a>
+
+  <a class="gate-half wrappon" href="wrappon/" aria-label="랩폰 써니 페이지로 이동">
+    <div class="photo"><video class="gate-video" src="wrappon/images/gate-sunny.mp4" poster="wrappon/images/gate-sunny.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video></div>
+    <div class="gate-half-inner">
+      <span class="gate-eyebrow">WRAPPON SUNNY · <span class="new-tag">NEW</span></span>
+      <h2 class="gate-title">랩폰<em>써니</em></h2>
+      <p class="gate-tagline">물 없이 열로 밀봉하는 <strong>이동식 화장실</strong>.</p>
+      <div class="gate-price">캠핑 · 차박 · 재난 대비</div>
+      <span class="gate-enter">Enter Sunny <span class="arrow">→</span></span>
     </div>
   </a>
 </main>
@@ -615,6 +688,16 @@ img{max-width:100%;display:block}
   overlay.addEventListener('click', close);
   closeBtn.addEventListener('click', close);
   document.addEventListener('keydown', e=>{ if(e.key==='Escape' && drawer.classList.contains('open')) close(); });
+})();
+
+// ===== 랩폰 써니 게이트 영상: 자동재생이 막히면(절전 모드 등) 사진으로 =====
+(function(){
+  const v = document.querySelector('.gate-video');
+  if(!v) return;
+  const hide = ()=>{ v.style.display='none'; };
+  v.addEventListener('error', hide);
+  const p = v.play && v.play();
+  if(p && p.catch) p.catch(hide);
 })();
 </script>
 
